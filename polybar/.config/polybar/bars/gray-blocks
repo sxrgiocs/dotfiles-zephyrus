@@ -1,0 +1,231 @@
+[colors]
+
+black = #22253d
+red = #ff4a69
+green = #42ff86
+yellow = #ffeb66
+blue = #7881ff
+magenta = #ff79c6
+cyan = #69c0ff
+lightcyan = #8be9fd
+white = #ffffff
+orange = #ffbd52
+lime = #baff66
+purple = #ab70ff
+gray = #abc5db
+
+transparent = #00
+
+background = #080814
+foreground = #383d63
+foreground-alt = #22253d
+
+back_clear = #121229
+back_clearer = #272747
+back_clearest = #454569
+
+
+[bar/mainbar]
+monitor = ${env:MONITOR:HDMI-1}
+
+background = ${colors.transparent} 
+foreground = ${colors.foreground}
+
+font-0 = JetBrains Mono:size=9;3
+font-1 = Font Awesome 5 Free Solid:size=10;2
+font-2 = Font Awesome 5 Brands:size=10;2
+font-3 = Sans:size=5;3
+
+wm-restack = bspwm
+border-size = 6
+;border-color = ${colors.background}
+height = 26
+
+modules-left = network filesystem memory temperature wtitle
+modules-center = bspwm
+modules-right =  spotify backlight bat vol date 
+
+tray-position = right
+tray-padding = 2
+
+#bottom = true
+
+[module/s]
+type = custom/text
+content = "%{T4}  %{T-}"
+content-background = ${colors.transparent}
+
+[module/wtitle]
+type = internal/xwindow
+label = " %title% "
+label-empty = " Desktop "
+label-maxlen = 30
+label-background = ${colors.back_clearest}
+label-foreground = ${colors.gray}
+label-empty-background = ${colors.back_clearest}
+label-empty-foreground = ${colors.gray}
+
+[module/bspwm]
+
+type = internal/bspwm
+
+;label-separator = "%{T4}  %{T-}"
+
+label-focused = %name%
+label-focused-background = ${colors.gray}
+label-focused-foreground = ${colors.background}
+label-focused-padding = 1
+
+label-occupied = %name%
+label-occupied-padding = 1
+label-occupied-foreground = ${colors.gray}
+label-occupied-background = ${colors.background}
+label-urgent = %icon%!
+label-urgent-background = #ff5555
+label-urgent-padding = 1
+
+label-empty = %name%
+label-empty-foreground = ${colors.back_clearer}
+label-empty-background = ${colors.background}
+label-empty-padding = 1
+
+; Separator in between workspaces
+; label-separator = |
+
+[module/vol]
+type = internal/pulseaudio
+sink = alsa_output.pci-0000_00_1b.0.analog-stereo
+format-volume = <label-volume>
+format-muted = <label-muted>
+label-muted = "  Muted "
+label-volume = "  %percentage%% "
+format-volume-background = ${colors.back_clearer}
+format-volume-foreground = ${colors.gray}
+format-muted-background = ${colors.back_clearer}
+format-muted-foreground = ${colors.background}
+
+[module/bat]
+type = internal/battery
+bat = BAT0
+adapter = ADP0
+format-charging = <label-charging>
+format-discharging = <label-discharging>
+label-discharging = "  %percentage%% "
+label-charging = "  %percentage%% "
+label-full = "  Full "
+label-discharging-background = ${colors.back_clearer}
+label-charging-foreground = ${colors.yellow}
+label-charging-background = ${colors.back_clearer}
+label-discharging-foreground = ${colors.gray}
+label-full-background = ${colors.back_clearer}
+label-full-foreground = ${colors.green}
+
+[module/network]
+type = internal/network
+interface = wlan0
+label-disconnected = " No Connection "
+label-connected = "  %essid% "
+label-connected-foreground = ${colors.gray}
+label-connected-background = ${colors.back_clear}
+label-disconnected-foreground = ${colors.red}
+label-disconnected-background = ${colors.back_clear}
+
+[module/date]
+type = internal/date
+interval = 1
+
+#date = 
+date = "| %d-%m-%Y "
+
+#time = "  %H:%M"
+time = "  %H:%M"
+
+format-prefix = 
+format-prefix-foreground = ${colors.gray}
+format-foreground = ${colors.gray}
+format-background = ${colors.back_clear}
+
+label = %time% %date%
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 60
+
+format = <label> 
+format-warn = <label-warn> 
+label = "  %temperature-c% "
+label-warn = "  %temperature-c% "
+label-warn-foreground = ${colors.red}
+label-warn-background = ${colors.back_clearer}
+label-foreground = ${colors.gray}
+label-background = ${colors.back_clearer}
+
+[module/backlight]
+type = internal/backlight
+format = <ramp>
+label = "  "
+label-foreground = ${colors.gray}
+label-background = ${colors.back_clearer}
+
+ramp-foreground = ${colors.gray}
+ramp-background = ${colors.back_clearer}
+
+ramp-0 = "  0% "
+ramp-1 = "  10% "
+ramp-2 = "  20% "
+ramp-3 = "  30% "
+ramp-4 = "  40% "
+ramp-5 = "  50% "
+ramp-6 = "  60% "
+ramp-7 = "  70% "
+ramp-8 = "  80% "
+ramp-9 = "  90% "
+ramp-10 = "  100% "
+
+card = intel_backlight
+enable-scroll = true
+scroll-up = blight set +750
+scroll-down = blight set -750
+
+[module/memory]
+type = internal/memory
+interval = 2
+
+label = "  %percentage_used%% " 
+label-foreground = ${colors.gray}
+label-background = ${colors.back_clearer}
+
+[module/filesystem]
+type = internal/fs
+interval = 25
+
+mount-0 = /
+
+label-mounted = "  %free% " 
+label-unmounted =  %mountpoint% not mounted ‎ ‎ ‎ 
+label-mounted-foreground = ${colors.gray}
+label-mounted-background = ${colors.back_clearer}
+label-unmounted-foreground = ${colors.gray}
+label-unmounted-background = ${colors.back_clearer}
+
+[module/spotify]
+type = custom/script
+interval = 1
+format = <label>
+
+label-maxlen = 30
+
+exec = python3 /home/sergio/.config/polybar/scripts/spotify_status.py -f '{artist} - {song} ' 
+click-left = playerctl play-pause spotify
+scroll-up = playerctl next spotify
+scroll-down = playerctl previous spotify
+
+label-background = ${colors.back_clearest}
+label-foreground = ${colors.gray}
+
+format-prefix = "  "
+
+format-prefix-foreground = ${colors.gray}
+format-prefix-background = ${colors.back_clearest}
+

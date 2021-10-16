@@ -1,0 +1,14 @@
+set default-bg "#0a0a17"
+
+set recolor                     "true"
+set recolor-reverse-video       "true"
+set recolor-keephue             "true"
+
+set recolor true
+set recolor-darkcolor "#ffffff" # this is white
+set recolor-lightcolor "#0a0a17" #this is dark blue
+
+set statusbar-bg "#0a0a17"
+set statusbar-fg "#959aba"
+
+set selection-clipboard clipboard

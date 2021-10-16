@@ -1,0 +1,164 @@
+/*
+ *
+ * Author  : Aditya Shakya (modified by sxrgiocs)
+ * Mail    : adi1090x@gmail.com
+ * Github  : @adi1090x
+ * Twitter : @adi1090x
+ *
+ */
+
+configuration {
+    lines:                          3;
+    columns:						1;
+    font: 						    "Jetbrains Mono Nerd Font 12";
+    fixed-num-lines:                true;
+    show-icons: 					true;
+    hide-scrollbar: 				true;
+    fake-transparency: 				false;
+    scroll-method: 					0;
+    window-format: 					"· {w} · {c} · {t}";
+    click-to-exit: 					true;
+    display-windowcd: 				" ";
+    display-window: 				" ";
+}
+
+@import "themes/NightParrot.rasi"
+
+/* this solves the issue with rofi 1.7.0 */
+element-text, element-icon {
+        background-color: transparent;
+        text-color: inherit;
+}
+
+* {
+    background-color:             	@bg;
+}
+
+window {
+    border: 						0px;
+    border-color: 					@ac;
+    border-radius: 					5px;
+    padding: 						0;
+    width: 						    45%;
+}
+
+prompt {
+    enabled: 						true;
+	padding: 					    0.08% 1% 0% -0.5%;
+	background-color: 				@ac;
+	text-color: 					@se;
+	font:						    "Jetbrains Mono Nerd Font 12";
+}
+
+entry {
+    background-color:               @ac;
+    text-color:                     @se;
+    placeholder-color:              @se;
+    expand:                         true;
+    horizontal-align:               0;
+    placeholder:                    "Find window";
+    padding:                        0.10% 0% 0% 0%;
+    blink:                          true;
+}
+
+inputbar {
+    children:                       [ prompt, entry ];
+    background-color:               @ac;
+    text-color:                     @se;
+    expand:                         false;
+	border:			                4px;
+    border-radius:                  5px;
+	border-color:		    @bg;
+    margin:                         0% 0% 0% 0%;
+    padding:                        1%;
+}
+
+mainbox {
+    border: 						0px;
+    border-color: 					@ac;
+    padding: 						6;
+}
+
+listview {
+    fixed-height: 					0;
+    border: 						0px;
+    border-color: 					@ac;
+    spacing: 						4px;
+    scrollbar: 						false;
+    padding: 						5px 5px 0px 5px;
+}
+
+element {
+    border: 						0px;
+    border-radius: 					2px;
+    padding: 						5px;
+}
+
+element normal.normal {
+    background-color: 				@bg;
+    text-color:       				@fg;
+}
+
+element normal.active {
+    background-color: 				@bg;
+    text-color:       				@blue;
+}
+
+element selected.normal {
+    background-color: 				@se;
+    text-color:       				@bg;
+}
+
+element normal.urgent {
+    background-color: 				@bg;
+    text-color:       				@red;
+}
+
+element selected.urgent {
+    background-color: 				@red;
+    text-color:       				@bg;
+}
+
+element selected.active {
+    background-color: 				@blue;
+    text-color:       				@bg;
+}
+
+element alternate.normal {
+    background-color: 				@bg;
+    text-color:       				@fg;
+}
+
+element alternate.urgent {
+    background-color: 				@bg;
+    text-color:       				@fg;
+}
+
+element alternate.active {
+    background-color: 				@bg;
+    text-color:       				@fg;
+}
+
+sidebar {
+    border:       					0px;
+    border-color: 					@ac;
+    border-radius: 					0px;
+}
+
+scrollbar {
+    width:        					4px;
+    border:       					0px;
+    handle-color: 					@fg;
+    handle-width: 					8px;
+    padding:      					0;
+}
+
+message {
+    border: 						0px;
+    border-color: 					@ac;
+    padding: 						1px;
+}
+
+textbox {
+    text-color: 					@fg;
+}

@@ -1,0 +1,264 @@
+
+# ███████╗██╗  ██╗██╗  ██╗██╗  ██╗██████╗ 
+# ██╔════╝╚██╗██╔╝██║  ██║██║ ██╔╝██╔══██╗
+# ███████╗ ╚███╔╝ ███████║█████╔╝ ██║  ██║
+# ╚════██║ ██╔██╗ ██╔══██║██╔═██╗ ██║  ██║
+# ███████║██╔╝ ██╗██║  ██║██║  ██╗██████╔╝
+# ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ 
+                                        
+########################################################################
+#               W M  I N D E P E N D E N T  H O T K E Y S              #
+########################################################################
+
+# terminal emulator
+super + Return
+    kitty
+
+#lock screen and suspend
+ctrl + super + alt + x
+	systemctl suspend & betterlockscreen -l
+
+# program launcher
+super + p
+    /home/sergio/.config/rofi/launcher/launcher.sh
+
+#alternative program launcher
+super + shift + d
+    /home/sergio/.config/rofi/launcher/launcher_all.sh
+
+super + ctrl + p
+    rofi -modi windowcd -show windowcd -width 50 -display-windowcd "Windows "
+
+# make sxhkd reload its configuration files:
+super + Escape
+    pkill -USR1 -x sxhkd
+
+#rofi system menu
+super + shift + p
+    /home/sergio/.config/rofi/powermenu/powermenu.sh
+
+# rofi finder
+
+super + d
+    /home/sergio/.config/rofi/locate/rofi-locate.sh
+########################################################################
+#                       B S P W M  H O T K E Y S                       #
+########################################################################
+
+# quit/restart bspwm
+super + alt + {q,r}
+	bspc {quit,wm -r}
+
+# close and kill
+super + {_,shift + }w
+	bspc node -{c,k}
+
+# alternate between the tiled and monocle layout
+super + m
+	bspc desktop -l next
+
+# send the newest marked node to the newest preselected node
+super + y
+	bspc node newest.marked.local -n newest.!automatic.local
+
+# swap the current node and the biggest node
+super + g
+	bspc node -s biggest
+
+########################################################################
+#                          S T A T E / F L A G S                       #
+########################################################################
+
+# set the window state
+super + {t,shift + t,s,f}
+	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+
+# set the node flags
+super + ctrl + {m,x,y,z}
+	bspc node -g {marked,locked,sticky,private}
+
+
+########################################################################
+#                        F O C U S / S W A P                           #
+########################################################################
+
+# focus the node in the given direction
+#super + {_,shift + }{Left, Down, Up, Right}
+#	bspc node -{f,s} {west,south,north,east}
+
+super + {_,shift + }{h, j, k, l}
+	bspc node -{f,s} {west,south,north,east}
+
+# focus the next/previous node in the current desktop
+super + Tab
+	bspc node -f next.local
+
+# focus the next/previous desktop in the current monitor
+#super + ctrl + {Left, Right}
+#	bspc desktop -f {prev,next}.occupied.local
+
+super + ctrl + {j,k}
+	bspc desktop -f {prev,next}.occupied.local
+
+# focus the last node/desktop
+super + {grave,Tab}
+	bspc {node,desktop} -f last
+
+# focus the older or newer node in the focus history
+super + {o,i}
+	bspc wm -h off; \
+	bspc node {older,newer} -f; \
+	bspc wm -h on
+
+# focus or send to the given desktop
+super + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
+
+super + alt + 1
+    bspc {desktop -f,node -d} '^11'
+
+# focus or send to the given desktop
+super + {_,shift + }{Left, Right}
+        bspc {desktop -f,node -d} '^{prev,next}'
+
+########################################################################
+#                           P R E S E L E C T                          #
+########################################################################
+
+# preselect the direction
+super + ctrl + alt + {h,j,k,l}
+	bspc node -p {west,south,north,east}
+
+# preselect the ratio
+super + ctrl + {1-9}
+	bspc node -o 0.{1-9}
+
+# cancel the preselection for the focused node
+super + ctrl + alt + space
+	bspc node -p cancel
+
+# cancel the preselection for the focused desktop
+super + ctrl + shift + space
+	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+
+########################################################################
+#                         M O V E / R E S I Z E                        #
+########################################################################
+
+# expand a window by moving one of its side outward
+#super + alt + {Left,Down,Up,Right}
+#	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+# contract a window by moving one of its side inward
+#super + alt + shift + {h,j,k,l}
+#	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+# move a floating window
+super + alt + {Left,Down,Up,Right}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+super + shift + i
+	/home/sergio/.config/bspwm/scripts/winhide.sh
+
+shift + alt + Tab 
+    /home/sergio/.config/rofi/windows/launcher_hidden.sh
+
+alt + Tab 
+    /home/sergio/.config/rofi/windows/launcher.sh
+#######################################################################
+#                          C U S T O M                                #
+#######################################################################
+
+#custom resize
+ctrl + alt + {h,j,k,l}
+	/home/sergio/.config/bspwm/scripts/bspwm_resize {west, south, north, east}
+
+#change keyboard layout
+super + n
+	setxkbmap -rules evdev -model evdev -layout us -variant intl
+
+super + alt + n
+	setxkbmap -rules evdev -model evdev -layout us 
+
+super + alt + e
+	setxkbmap -rules evdev -model evdev -layout es
+
+########################################################################
+#                       F U N C T I O N  K E Y S                       #
+########################################################################
+
+# Media Key : Raise audio volume
+XF86AudioRaiseVolume
+ pactl set-sink-volume @DEFAULT_SINK@ +2%
+# Media Key : Lower audio volume
+
+XF86AudioLowerVolume
+ pactl set-sink-volume @DEFAULT_SINK@ -2%
+
+# Media Key : Mute card #1
+XF86AudioMute
+    pactl set-sink-mute 0 0
+    pactl set-sink-mute 0 1
+
+# Lower brightness
+XF86MonBrightnessDown
+    blight -d amdgpu_bl0 set -25.5
+
+# Raise Brigtness
+XF86MonBrightnessUp
+    blight -d amdgpu_bl0 set +25.5
+
+########################################################################
+#                    L A U N C H  P R O G R A M S                      #
+########################################################################
+
+#launch pcmanfm
+super + shift + c
+	pcmanfm 
+
+#launch firefox
+super + shift + b
+    firefox
+
+super + shift + m
+	firefox --private-window
+
+#screenshot
+super + shift + s
+    gnome-screenshot -i
+
+#launch spotify
+super + alt + s
+    spotify
+
+super + {comma,period}
+	bspc node -f {next,prev}.local
+
+super + shift + r
+    kitty -e ranger
+
+super + shift + v 
+    pavucontrol
+    
+super + alt + c 
+    gnome-calculator
+
+
+########################################################################
+#                    A S U S  R O G  G 1 5                             #
+########################################################################
+
+XF86KbdBrightnessDown
+    asusctl -p
+
+XF86KbdBrightnessUp
+    asusctl -n
+
+XF86Launch3                 # this is the aura keyboard key
+    asusctl led-mode -n
+
+XF86Launch4                 # fan control
+    asusctl profile -n
+
+XF86Sleep
+	systemctl suspend & betterlockscreen -l

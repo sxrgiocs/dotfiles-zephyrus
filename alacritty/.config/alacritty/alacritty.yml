@@ -1,0 +1,137 @@
+
+#  █████╗ ██╗      █████╗  ██████╗██████╗ ██╗████████╗████████╗██╗   ██╗
+# ██╔══██╗██║     ██╔══██╗██╔════╝██╔══██╗██║╚══██╔══╝╚══██╔══╝╚██╗ ██╔╝
+# ███████║██║     ███████║██║     ██████╔╝██║   ██║      ██║    ╚████╔╝ 
+# ██╔══██║██║     ██╔══██║██║     ██╔══██╗██║   ██║      ██║     ╚██╔╝  
+# ██║  ██║███████╗██║  ██║╚██████╗██║  ██║██║   ██║      ██║      ██║   
+# ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝   ╚═╝      ╚═╝      ╚═╝   
+
+########################################################################
+#                         E N V I R O N M E N T                        #
+########################################################################
+
+env:
+  TERM: xterm-256color
+  WINIT_X11_SCALE_FACTOR: "1"
+
+window:
+  # Window padding (changes require restart)
+  padding:
+    x: 15
+    y: 15
+      #
+  # Window title
+  title: Alacritty
+
+  # Window class (Linux/BSD only):
+  class:
+    # Application instance name
+    instance: Alacritty
+    # General application class
+    general: Alacritty
+scrolling:
+  history: 5000
+
+cursor:
+  style: Underline
+
+live_config_reload: true
+
+########################################################################
+#                               F O N T S                              #
+########################################################################
+
+font:
+  normal:
+    family: JetBrains Mono Nerd Font 
+    style: Regular
+
+  bold:
+    family: JetBrains Mono Nerd Font 
+    style: Bold
+
+  italic:
+    family: JetBrains Mono Nerd Font
+    style: Italic
+
+  bold_italic:
+    family: JetBrains Mono Nerd Font 
+    style: Bold Italic
+
+  size: 11.0
+
+  offset:
+    x: 0
+    y: 0
+
+########################################################################
+#                           C O L O R S                                #
+########################################################################
+
+colors:
+  primary:
+    background: '0x0a0c1a'
+    foreground: '0xf8f8f2'
+
+  cursor:
+    text: '0x44475a'
+    cursor: '0xf8f8f2'
+
+  selection:
+    text: '0xf8f8f2'
+    background: '0x44475a'
+
+  # Normal colors
+  normal:
+    black:   '0x22253d'
+    red:     '0xff4a69'
+    green:   '0x42ff87'
+    yellow:  '0xfff980'
+    blue:    '0x7881ff'
+    magenta: '0xff69cd'
+    cyan:    '0x8be9fd'
+    white:   '0xbfbfbf'
+
+  # Bright colors
+  bright:
+    black:   '0x383d63'
+    red:     '0xff5c78'
+    green:   '0x6bffa1'
+    yellow:  '0xfff8a8'
+    blue:    '0x85b4ff'
+    magenta: '0xff9cde'
+    cyan:    '0xbdf3ff'
+    white:   '0xe0e8f3'
+
+  # Dim colors
+  dim:
+    black:   '0x1a182b'
+    red:     '0xb03c3c'
+    green:   '0x1ef956'
+    yellow:  '0xebf85b'
+    blue:    '0x459cff'
+    magenta: '0x976eff'
+    cyan:    '0x69c0ff'
+    white:   '0xe0e8f3'
+
+background_opacity: 1.0
+
+########################################################################
+#                      K E Y  B I N D I N G S                          #
+########################################################################
+
+key_bindings:
+    # (Windows, Linux, and BSD only)
+  - { key: V,        mods: Control|Shift, action: Paste            }
+  - { key: C,        mods: Control|Shift, action: Copy             }
+  - { key: Insert,   mods: Shift,         action: PasteSelection   }
+  - { key: Key0,     mods: Control,       action: ResetFontSize    }
+  - { key: Equals,   mods: Control,       action: IncreaseFontSize }
+  - { key: Paste,                    action: Paste                            }
+  - { key: Copy,                     action: Copy                             }
+  - { key: L,         mods: Control, action: ClearLogNotice                   }
+  - { key: L,         mods: Control, chars: "\x0c"                            }
+  - { key: PageUp,    mods: Shift,   action: ScrollPageUp,   mode: ~Alt       }
+  - { key: PageDown,  mods: Shift,   action: ScrollPageDown, mode: ~Alt       }
+  - { key: Home,      mods: Shift,   action: ScrollToTop,    mode: ~Alt       }
+  - { key: End,       mods: Shift,   action: ScrollToBottom, mode: ~Alt       }

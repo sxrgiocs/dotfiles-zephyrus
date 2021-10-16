@@ -1,0 +1,420 @@
+
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/polybar/polybar
+;
+;   The README contains a lot of information
+
+[colors]
+
+black = #22253d
+red = #ff4a69
+green = #42ff86
+yellow = #ffeb66
+blue = #7881ff
+magenta = #ff79c6
+cyan = #69c0ff
+lightcyan = #8be9fd
+white = #ffffff
+orange = #ffbd52
+lime = #baff66
+purple = #ab70ff
+gray = #abc5db
+
+transparent = #00
+
+background = #080814
+foreground = #383d63
+foreground-alt = #22253d
+
+back_clear = #121229
+back_clearer = #272747
+back_clearest = #454569
+
+[bar/mainmon]
+
+width = 11%
+height = 30
+offset-x = 6
+offset-y = 5
+radius = 3
+fixed-center = true
+bottom = false
+enable-ipc = true
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+font-0 = JetBrains Mono:size=9;3
+font-1 = Font Awesome 5 Free Solid:size=10;2
+font-2 = Font Awesome 5 Brands:size=10;2
+font-3 = Sans:size=5;3
+
+modules-center = bspwm
+
+wm-restack = bspwm
+;wm-restack = bspwm
+
+override-redirect = false
+
+;; scroll-up = bspwm-desknext
+;; scroll-down = bspwm-deskprev
+
+;scroll-up = i3wm-wsnext
+;scroll-down = i3wm-wsprev
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[bar/spot]
+
+width = 13%
+height = 30
+offset-x = 223
+offset-y = 5
+radius = 3
+fixed-center = true
+bottom = false
+enable-ipc = true
+
+background = ${colors.green}
+foreground = ${colors.background}
+
+font-0 = JetBrains Mono:size=9;3
+font-1 = Font Awesome 5 Free Solid:size=10;2
+font-2 = Font Awesome 5 Brands:size=10;2
+font-3 = Sans:size=5;3
+
+modules-center = spotify
+
+wm-restack = bspwm
+;wm-restack = bspwm
+
+override-redirect = false
+
+[bar/date]
+
+width = 9%
+height = 30
+offset-x = 88.3%
+offset-y = 5
+radius = 3
+fixed-center = true
+bottom = false
+enable-ipc = true
+
+background = ${colors.red}
+foreground = ${colors.background}
+
+font-0 = JetBrains Mono:size=9;3
+font-1 = Font Awesome 5 Free Solid:size=10;2
+font-2 = Font Awesome 5 Brands:size=10;2
+font-3 = Sans:size=5;3
+
+modules-center = date
+
+wm-restack = bspwm
+;wm-restack = bspwm
+
+override-redirect = false
+
+[module/date]
+type = internal/date
+interval = 1
+
+#date = 
+date = "  %d-%m-%Y"
+
+time = "  %H:%M "
+
+format-prefix = 
+
+label = %date% %time%
+
+[bar/utils]
+
+width = 9%
+height = 30
+offset-x = 78.9%
+offset-y = 5
+radius = 3
+fixed-center = true
+bottom = false
+enable-ipc = true
+
+background = ${colors.orange}
+foreground = ${colors.background}
+
+font-0 = JetBrains Mono:size=9;3
+font-1 = Font Awesome 5 Free Solid:size=10;2
+font-2 = Font Awesome 5 Brands:size=10;2
+font-3 = Sans:size=5;3
+
+modules-center = backlight bat vol
+
+wm-restack = bspwm
+;wm-restack = bspwm
+
+override-redirect = false
+[module/backlight]
+type = internal/backlight
+format = <ramp>
+label = "  "
+
+ramp-0 = "  0% "
+ramp-1 = "  10% "
+ramp-2 = "  20% "
+ramp-3 = "  30% "
+ramp-4 = "  40% "
+ramp-5 = "  50% "
+ramp-6 = "  60% "
+ramp-7 = "  70% "
+ramp-8 = "  80% "
+ramp-9 = "  90% "
+ramp-10 = "  100% "
+
+card = intel_backlight
+enable-scroll = true
+scroll-up = blight set +750
+scroll-down = blight set -750
+
+[module/bat]
+type = internal/battery
+bat = BAT0
+adapter = ADP0
+format-charging = <label-charging>
+format-discharging = <label-discharging>
+label-discharging = "  %percentage%% "
+label-charging = "  %percentage%% "
+label-full = "  Full "
+
+[module/vol]
+type = internal/pulseaudio
+sink = alsa_output.pci-0000_00_1b.0.analog-stereo
+format-volume = <label-volume>
+format-muted = <label-muted>
+label-muted = "  Muted "
+label-volume = "  %percentage%% "
+
+[bar/system]
+
+width = 10%
+height = 30
+offset-x = 68.55%
+offset-y = 5
+radius = 3
+fixed-center = true
+bottom = false
+enable-ipc = true
+
+background = ${colors.purple}
+foreground = ${colors.background}
+
+font-0 = JetBrains Mono:size=9;3
+font-1 = Font Awesome 5 Free Solid:size=10;2
+font-2 = Font Awesome 5 Brands:size=10;2
+font-3 = Sans:size=5;3
+
+modules-center = filesystem memory temperature
+
+wm-restack = bspwm
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 60
+
+format = <label> 
+format-warn = <label-warn> 
+label = "  %temperature-c% "
+label-warn = "  %temperature-c% "
+
+[module/filesystem]
+type = internal/fs
+interval = 25
+
+mount-0 = /
+
+label-mounted = "  %free% " 
+label-unmounted =  %mountpoint% not mounted ‎ ‎ ‎ 
+
+[module/memory]
+type = internal/memory
+interval = 2
+
+label = "  %percentage_used%% " 
+
+[bar/net]
+
+width = 2%
+height = 30
+offset-x = 97.65%
+offset-y = 5
+radius = 3
+fixed-center = true
+bottom = false
+enable-ipc = true
+
+background = ${colors.magenta}
+foreground = ${colors.background}
+
+font-0 = JetBrains Mono:size=9;3
+font-1 = Font Awesome 5 Free Solid:size=10;2
+font-2 = Font Awesome 5 Brands:size=10;2
+font-3 = Sans:size=5;3
+
+modules-center = network
+
+wm-restack = bspwm
+
+[module/network]
+type = internal/network
+interface = wlan0
+label-disconnected = "  "
+label-connected = "  "
+
+[bar/workspaces]
+monitor = ${env:MONITOR:eDP-1}
+
+width = 16%
+height = 30
+offset-x = 6
+offset-y = 5
+radius = 3
+fixed-center = true
+bottom = false
+enable-ipc = true
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+font-0 = JetBrains Mono:size=9;3
+font-1 = Font Awesome 5 Free Solid:size=10;2
+font-2 = Font Awesome 5 Brands:size=10;2
+font-3 = Sans:size=5;3
+
+modules-center = bspwm
+
+wm-restack = bspwm
+;wm-restack = bspwm
+
+override-redirect = false
+
+;; scroll-up = bspwm-desknext
+;; scroll-down = bspwm-deskprev
+
+;scroll-up = i3wm-wsnext
+;scroll-down = i3wm-wsprev
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[bar/mainlap]
+monitor = ${env:MONITOR:eDP-1}
+
+width = 11%
+height = 30
+offset-x = 6
+offset-y = 5
+radius = 3
+fixed-center = true
+bottom = false
+enable-ipc = true
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+font-0 = JetBrains Mono:size=9;3
+font-1 = Font Awesome 5 Free Solid:size=10;2
+font-2 = Font Awesome 5 Brands:size=10;2
+font-3 = Sans:size=5;3
+
+modules-center = bspwm
+
+wm-restack = bspwm
+;wm-restack = bspwm
+
+override-redirect = false
+
+;; scroll-up = bspwm-desknext
+;; scroll-down = bspwm-deskprev
+
+;scroll-up = i3wm-wsnext
+;scroll-down = i3wm-wsprev
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[module/bspwm]
+
+type = internal/bspwm
+
+;label-separator = "%{T4}  %{T-}"
+
+label-focused = %name%
+label-focused-background = ${colors.background}
+label-focused-foreground = ${colors.green}
+label-focused-padding = 1
+
+label-occupied = %name%
+label-occupied-padding = 1
+label-occupied-foreground = ${colors.gray}
+label-occupied-background = ${colors.background}
+label-urgent = %icon%!
+label-urgent-background = #ff5555
+label-urgent-padding = 1
+
+label-empty = %name%
+label-empty-foreground = ${colors.back_clearer}
+label-empty-background = ${colors.background}
+label-empty-padding = 1
+
+; Separator in between workspaces
+; label-separator = |
+
+[bar/spotifylap]
+monitor = ${env:MONITOR:eDP-1}
+
+width = 13%
+height = 30
+offset-x = 16.65%
+offset-y = 5
+radius = 3
+fixed-center = true
+bottom = false
+enable-ipc = true
+
+background = ${colors.green}
+foreground = ${colors.background}
+
+font-0 = JetBrains Mono:size=9;3
+font-1 = Font Awesome 5 Free Solid:size=10;2
+font-2 = Font Awesome 5 Brands:size=10;2
+font-3 = Sans:size=5;3
+
+modules-center = spotify
+
+wm-restack = bspwm
+;wm-restack = bspwm
+
+override-redirect = false
+
+[module/spotify]
+type = custom/script
+tail = true
+; prefix symbol is shown before the text
+format-prefix = " "
+format = <label>
+exec = ~/.config/polybar/scripts/scroll_spotify_status.sh
+
+click-left = playerctl play-pause spotify
+scroll-up = playerctl next spotify
+scroll-down = playerctl previous spotify
+

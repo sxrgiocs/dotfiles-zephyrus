@@ -1,0 +1,378 @@
+;===========================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/polybar/polybar
+;
+;   The README contains a lot of information
+;
+;===========================================================
+
+;########################################################################
+;#                          C O L O R S                                 #
+;########################################################################
+
+[colors]
+black = #22253d 
+red = #ff4a69 
+green = #50fa7b
+yellow = #fff980
+blue = #7881ff
+magenta = #ff69cd
+cyan = #30d3f0
+lightcyan = #8be9fd
+white = #ffffff
+orange = #ffbe6c
+lime = #a4ff73
+purple = #b778ff
+gray = #c3c7e0
+
+transparent = #00
+
+background = #0a0a17
+foreground = #383d63
+foreground-alt = #22253d
+back_clear = #14162b
+
+;########################################################################
+;#                             B A R                                    #
+;########################################################################
+
+[bar/laptop]
+monitor = eDP-1
+border-size = 7
+border-color = ${colors.transparent}
+height = 32
+dpi = 125
+
+background = ${colors.transparent}
+foreground = ${colors.foreground}
+
+; Give transparent space around the bar
+width=99.7%
+offset-x = 3px
+offset-y = 0.3%
+#offset-y = 0.7%
+
+; Aesthetic adjustments
+line-size = 1
+padding-left = 0
+padding-right = 0
+module-margin-left = 0
+module-margin-right = 0
+;separator = %{F#44475a}|%{F-}
+
+; Fonts
+font-0 = JetBrains Mono:style=bold:pixelsize=9.5;4
+font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+font-2 = Font Awesome 5 Free Solid:size=10;4
+font-3 = JetBrains Mono Nerd Font:style=bold:pixelsize=15;4
+font-4 = JetBrains Mono Nerd Font:style=bold:pixelsize=12;4
+
+; Modules
+modules-left = bspwm empty-small round-left spotify round-right empty-small xwindow
+modules-center = 
+modules-right = round-left cpu empty-color memory round-right empty temperature empty pulseaudio empty battery empty round-left date round-right empty-small
+
+; Tray
+tray-position = right
+tray-padding = 0
+tray-maxsize = 22
+
+; Hide on full screen
+wm-restack = bspwm
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+;########################################################################
+;#                             B A R                                    #
+;########################################################################
+
+[bar/desktop]
+monitor = HDMI-1
+border-size = 7
+border-color = ${colors.transparent}
+height = 22
+
+background = ${colors.transparent}
+foreground = ${colors.foreground}
+
+width=99.7%
+offset-x = 3px
+offset-y = 0.3%
+
+; Aesthetic adjustments
+line-size = 1
+padding-left = 0
+padding-right = 0
+module-margin-left = 0
+module-margin-right = 0
+;separator = %{F#44475a}|%{F-}
+
+; Fonts
+font-0 = JetBrains Mono:style=bold:pixelsize=9.5;3
+font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+font-2 = Font Awesome 5 Free Solid:size=10;2
+font-3 = JetBrains Mono Nerd Font:style=bold:pixelsize=15;4
+font-4 = JetBrains Mono Nerd Font:style=bold:pixelsize=12;3
+
+; Modules
+modules-left = bspwm empty-small round-left spotify round-right empty-small xwindow
+modules-center = 
+modules-right = round-left cpu empty-color memory round-right empty temperature empty pulseaudio empty battery empty round-left date round-right empty-small
+
+; Tray
+tray-position = right
+tray-padding = 0
+
+
+; Hide on full screen
+wm-restack = bspwm
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+;########################################################################
+;#                           M O D U L E S                              #
+;########################################################################
+
+; AESTHETIC MODULES
+; modules by u/siduck76
+
+[module/round-left]
+type = custom/text
+content = %{T3}%{T-}
+content-foreground = ${colors.foreground-alt}
+
+[module/round-right]
+type = custom/text
+content = %{T3}%{T-}
+content-foreground = ${colors.foreground-alt}
+
+[module/empty]
+type = custom/text
+content = "  "
+
+[module/empty-small]
+type = custom/text
+content = " "
+
+[module/empty-color]
+type = custom/text
+content = " "
+content-background = ${colors.foreground-alt}
+
+; BSPWM
+[module/bspwm]
+type = internal/bspwm
+
+label-focused = %{T5}%{T-}
+;label-focused-background = ${colors.gray}
+label-focused-foreground = ${colors.gray}
+label-focused-padding = 1
+
+label-occupied = %{T5}%{T-}
+label-occupied-padding = 1
+label-occupied-foreground = ${colors.gray}
+
+label-urgent = %{T5}%{T-}
+label-urgent-background = ${colors.red}
+label-urgent-padding = 1
+
+label-empty = %{T5}%{T-}
+label-empty-foreground = ${colors.foreground}
+label-empty-padding = 1
+
+; WINDOW
+[module/xwindow]
+type = internal/xwindow
+label = " %title:0:30:...% "
+label-foreground = ${colors.white}
+
+; BACKLIGHT (Not formatted)
+[module/backlight]
+type = internal/backlight
+format = <label> <ramp> 
+label = BRI:
+label-foreground = ${colors.yellow}
+ramp-foreground = ${colors.yellow}
+
+card = intel_backlight
+enable-scroll = true
+scroll-up = blight set +750
+scroll-down = blight set -750
+
+ramp-0 = 0%
+ramp-1 = 10%
+ramp-2 = 20%
+ramp-3 = 30%
+ramp-4 = 40%
+ramp-5 = 50%
+ramp-6 = 60%
+ramp-7 = 70%
+ramp-8 = 80%
+ramp-9 = 90%
+ramp-10 = 100%
+
+;CPU (Not formatted)
+[module/cpu]
+type = internal/cpu
+interval = 2
+
+format-prefix =" " 
+format =  <label> 
+
+label = "%percentage%% "
+
+format-foreground = ${colors.white}
+label-background = ${colors.foreground-alt}
+
+format-prefix-foreground = ${colors.lime}
+format-prefix-background = ${colors.foreground-alt}
+
+; MEMORY (Not formatted)
+[module/memory]
+type = internal/memory
+interval = 2
+
+format-prefix = " "
+format-prefix-foreground = ${colors.purple}
+format-prefix-background = ${colors.foreground-alt}
+
+label = %percentage_used%%
+format-foreground = ${colors.white}
+format-background = ${colors.foreground-alt}
+
+; WIRELESS NETWORK
+[module/wlan]
+type = internal/network
+interface = wlp3s0
+interval = 3.0
+
+format-connected = <label-connected>
+label-connected = ""
+label-connected-foreground = ${colors.purple}
+
+format-disconnected = <label-disconnected>
+label-disconnected = " "
+label-disconnected-foreground = ${colors.foreground_alt}
+
+; ETHERNET (Not formatted)
+[module/eth]
+type = internal/network
+interface = enp0s20f0u4u3
+interval = 3.0
+
+format-connected-underline = #55aa55
+format-connected-prefix = " "
+format-connected-prefix-foreground = ${colors.foreground-alt}
+label-connected = %local_ip%
+
+format-disconnected =
+;format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = ${colors.foreground-alt}
+
+; DATE AND TIME
+[module/date]
+type = internal/date
+interval = 5
+
+date = "%A %d, %B %Y"
+
+format-prefix = " "
+format-prefix-foreground = ${colors.gray}
+format-prefix-background = ${colors.foreground-alt}
+
+time = %H:%M
+
+label = %time% %date%
+label-foreground = ${colors.white}
+label-background = ${colors.foreground-alt}
+
+; VOLUME
+[module/pulseaudio]
+type = internal/pulseaudio
+
+format-volume-prefix = " "
+label-volume = "%percentage%%"
+label-volume-foreground = ${colors.white}
+format-volume-prefix-foreground = ${colors.orange}
+
+format-muted-prefix = " "
+label-muted = MUTED
+label-muted-foreground = ${colors.foreground-alt}
+
+; BATTERY
+[module/battery]
+type = internal/battery
+bat = BAT0
+adapter = ADP0
+
+format-discharging-prefix = ""
+label-discharging = " %percentage%%"
+format-discharging = <label-discharging>
+label-discharging-foreground = ${colors.white}
+format-discharging-prefix-foreground = ${colors.red}
+
+format-charging-prefix = ""
+label-charging = " %percentage%%"
+format-charging = <label-charging>
+label-charging-foreground = ${colors.white}
+format-charging-prefix-foreground = ${colors.yellow}
+
+format-full-prefix = " "
+label-full = Full
+format-full = <label-full>
+label-full-foreground = ${colors.green}
+format-full-prefix-foreground = ${colors.green}
+
+; TEMPERATURE
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 70
+
+format-prefix = " "
+label = %temperature-c%
+format = <label>
+format-prefix-foreground = ${colors.blue}
+format-foreground = ${colors.white}
+
+format-warn-prefix = " "
+label-warn = %temperature-c%
+format-warn = <label-warn> 
+label-warn-foreground = ${colors.red}
+format-warn-prefix-foreground = ${colors.red}
+
+; SPOTIFY
+[module/spotify]
+type = custom/script
+tail = true
+
+format-prefix = " "
+format = <label>
+exec = ~/.config/polybar/scripts/scroll_spotify_status.sh
+
+format-prefix-foreground = ${colors.green}
+format-prefix-background = ${colors.foreground-alt}
+
+label-foreground = ${colors.white}
+label-background = ${colors.foreground-alt}
+
+click-left = playerctl --player=spotify play-pause
+scroll-up = playerctl --player=spotify next
+scroll-down = playerctl --player=spotify previous
+
+;for syntax highlighting
+; vim:ft=dosini 

@@ -1,0 +1,268 @@
+[colors] 
+black = #22253d 
+red = #ff4a69 
+green = #42ff86
+yellow = #ffec5e
+blue = #7881ff
+magenta = #ff79c6
+cyan = #69c0ff
+lightcyan = #8be9fd
+white = #ffffff
+orange = #ffbd52
+lime = #baff66
+purple = #ab70ff
+gray = #abc5db
+
+transparent = #00
+
+background = #080814
+foreground = #383d63
+foreground-alt = #22253d
+
+back_clear = #121229
+back_clearer = #272747
+back_clearest = #454569
+
+[bar/mainbar]
+monitor = ${env:MONITOR}
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+font-0 = JetBrains Mono:size=9;3
+font-1 = Font Awesome 5 Free Solid:size=10;2
+font-2 = Font Awesome 5 Brands:size=10;2
+font-3 = Sans:size=5;3
+
+wm-restack = bspwm
+border-size = 6
+border-color = ${colors.background}
+height = 25
+
+width=99.30%
+offset-x = 0.30%
+offset-y = 0.5%
+
+modules-left = bspwm s spotify 
+modules-right = filesystem s s temperature s s bat s s vol s s network s s date 
+
+tray-position = right
+tray-padding = 2
+
+[module/s]
+type = custom/text
+content = "%{T4}  %{T-}"
+content-background = ${colors.background}
+
+[module/wtitle]
+type = internal/xwindow
+label = " %title% "
+label-empty = " Desktop "
+label-maxlen = 50
+label-background = ${colors.black}
+label-foreground = ${colors.gray}
+label-empty-background = ${colors.black}
+label-empty-foreground = ${colors.gray}
+
+[module/bspwm]
+
+type = internal/bspwm
+
+;label-separator = "%{T4}  %{T-}"
+
+label-focused = %name%
+label-focused-background = ${colors.gray}
+label-focused-foreground = ${colors.background}
+label-focused-padding = 1
+
+label-occupied = %name%
+label-occupied-padding = 1
+label-occupied-foreground = ${colors.gray}
+label-occupied-background = ${colors.background}
+label-urgent = %icon%!
+label-urgent-background = #ff5555
+label-urgent-padding = 1
+
+label-empty = %name%
+label-empty-foreground = ${colors.black}
+label-empty-background = ${colors.background}
+label-empty-padding = 1
+
+; Separator in between workspaces
+; label-separator = |
+
+[module/vol]
+type = internal/pulseaudio
+sink = alsa_output.pci-0000_00_1b.0.analog-stereo
+
+format-volume-prefix= "  "
+label-volume = " %percentage%% "
+format-volume = <label-volume>
+format-volume-background = ${colors.back_clearer}
+format-volume-foreground = ${colors.gray}
+format-volume-prefix-foreground = ${colors.background}
+format-volume-prefix-background = ${colors.magenta}
+
+format-muted-prefix= "  "
+label-muted = " Muted "
+format-muted = <label-muted>
+format-muted-background = ${colors.back_clearer}
+format-muted-foreground = ${colors.background}
+format-muted-prefix-foreground = ${colors.background}
+format-muted-prefix-background = ${colors.back_clear}
+
+[module/bat]
+type = internal/battery
+bat = BAT0
+adapter = ADP0
+
+format-discharging-prefix = "  "
+label-discharging = " %percentage%% "
+format-discharging = <label-discharging>
+label-discharging-background = ${colors.back_clearer}
+label-discharging-foreground = ${colors.gray}
+format-discharging-prefix-background = ${colors.gray}
+format-discharging-prefix-foreground = ${colors.background}
+
+format-charging-prefix = "  "
+label-charging = " %percentage%% "
+format-charging = <label-charging>
+label-charging-foreground = ${colors.yellow}
+label-charging-background = ${colors.back_clearer}
+format-charging-prefix-background = ${colors.yellow}
+format-charging-prefix-foreground = ${colors.background}
+
+format-full-prefix = "  "
+label-full = " Full "
+format-full = <label-full>
+label-full-foreground = ${colors.green}
+label-full-background = ${colors.back_clearer}
+format-full-prefix-background = ${colors.green}
+format-full-prefix-foreground = ${colors.background}
+
+[module/network]
+type = internal/network
+interface = wlan0
+
+format-connected-prefix = "  "
+label-connected = " %essid% "
+format-connected-prefix-foreground = ${colors.background}
+format-connected-prefix-background = ${colors.purple}
+label-connected-foreground = ${colors.gray}
+label-connected-background = ${colors.back_clearer}
+
+format-disconnected-prefix = "  "
+label-disconnected = " No Connection "
+format-disconnected-prefix-foreground = ${colors.background}
+format-disconnected-prefix-background = ${colors.back_clear}
+label-disconnected-foreground = ${colors.background}
+label-disconnected-background = ${colors.back_clearer}
+
+[module/date]
+type = internal/date
+interval = 1
+
+#date = 
+date = "| %d-%m-%Y "
+
+format-time-prefix = 
+#time = "  %H:%M"
+time = " %H:%M"
+
+format-prefix = "  "
+format-prefix-foreground = ${colors.background}
+format-prefix-background = ${colors.red}
+format-foreground = ${colors.gray}
+format-background = ${colors.back_clearer}
+
+label = %time% %date%
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 60
+
+format-prefix = "  "
+format = <label> 
+label = " %temperature-c% "
+
+format-prefix-foreground = ${colors.background}
+format-prefix-background = ${colors.orange}
+
+label-foreground = ${colors.gray}
+label-background = ${colors.back_clearer}
+
+[module/backlight]
+type = internal/backlight
+format = <label><ramp>
+label = "  "
+label-foreground = ${colors.background}
+label-background = ${colors.yellow}
+
+ramp-foreground = ${colors.gray}
+ramp-background = ${colors.back_clearer}
+
+ramp-0 = " 0% "
+ramp-1 = " 10% "
+ramp-2 = " 20% "
+ramp-3 = " 30% "
+ramp-4 = " 40% "
+ramp-5 = " 50% "
+ramp-6 = " 60% "
+ramp-7 = " 70% "
+ramp-8 = " 80% "
+ramp-9 = " 90% "
+ramp-10 = " 100% "
+
+card = intel_backlight
+enable-scroll = true
+scroll-up = blight set +750
+scroll-down = blight set -750
+
+[module/memory]
+type = internal/memory
+interval = 2
+
+format-prefix = "  "
+label = " %percentage_used%% "
+label-foreground = ${colors.gray}
+
+format-prefix-foreground = ${colors.background}
+format-prefix-background = ${colors.cyan}
+
+[module/filesystem]
+type = internal/fs
+interval = 25
+
+mount-0 = /
+
+format-mounted-prefix= "  "
+label-mounted = " %free% " 
+
+format-mounted = <label-mounted>
+
+format-mounted-prefix-foreground = ${colors.background}
+format-mounted-prefix-background = ${colors.cyan}
+
+label-mounted-foreground = ${colors.gray}
+label-mounted-background = ${colors.back_clearer}
+
+[module/spotify]
+type = custom/script
+tail = true
+
+; prefix symbol is shown before the text
+format-prefix = "  "
+format = <label>
+exec = ~/.config/polybar/scripts/scroll_spotify_status.sh
+
+label-foreground = ${colors.gray}
+label-background = ${colors.back_clearer}
+
+format-prefix-foreground = ${colors.background}
+format-prefix-background = ${colors.green}
+
+click-left = playerctl play-pause spotify
+scroll-up = playerctl next spotify
+scroll-down = playerctl previous spotify
+

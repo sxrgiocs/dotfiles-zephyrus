@@ -1,0 +1,56 @@
+!# 
+!# ██╗  ██╗██████╗ ███████╗███████╗ ██████╗ ██████╗ ██╗   ██╗ ██████╗███████╗███████╗
+!# ╚██╗██╔╝██╔══██╗██╔════╝██╔════╝██╔═══██╗██╔══██╗██║   ██║██╔════╝██╔════╝██╔════╝
+!#  ╚███╔╝ ██████╔╝█████╗  ███████╗██║   ██║██████╔╝██║   ██║██║     █████╗  ███████╗
+!#  ██╔██╗ ██╔══██╗██╔══╝  ╚════██║██║   ██║██╔══██╗██║   ██║██║     ██╔══╝  ╚════██║
+!# ██╔╝ ██╗██║  ██║███████╗███████║╚██████╔╝██║  ██║╚██████╔╝╚██████╗███████╗███████║
+!# ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚══════╝ ╚═════╝ ╚═╝  ╚═╝ ╚═════╝  ╚═════╝╚══════╝╚══════╝
+
+! Cursor
+Xcursor.theme: Bibata-Modern-Ice
+
+!Xft.dpi: 120
+
+!########################################################################
+!#                           C O L O R S                                #
+!########################################################################
+
+! DARK OCEAN COLOR SCHEME
+#define FOREGROUND #f8f8f2
+#define BACKGROUND #0a0a17
+
+#define COLOR0  #22253d
+#define COLOR8  #383d63
+#define COLOR1  #ff4a69
+#define COLOR9  #ff7a91
+#define COLOR2  #42ff87
+#define COLOR10 #6bffa1
+#define COLOR3  #fff980
+#define COLOR11 #fff8a8
+#define COLOR4  #7881ff
+#define COLOR12 #85b4ff
+#define COLOR5  #ff69cd
+#define COLOR13 #ff9cde
+#define COLOR6  #30d3f0 
+#define COLOR14 #6bdcff 
+#define COLOR7  #959aba
+#define COLOR15 #c3c7e0
+
+*.foreground: FOREGROUND
+*.background: BACKGROUND
+*.color0: COLOR0
+*.color1: COLOR1
+*.color2: COLOR2
+*.color3: COLOR3
+*.color4: COLOR4
+*.color5: COLOR5
+*.color6: COLOR6
+*.color7: COLOR7
+*.color8: COLOR8
+*.color9: COLOR9
+*.color10: COLOR10
+*.color11: COLOR11
+*.color12: COLOR12
+*.color13: COLOR13
+*.color14: COLOR14
+*.color15: COLOR15

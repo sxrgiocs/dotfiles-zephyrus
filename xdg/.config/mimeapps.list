@@ -1,0 +1,27 @@
+[Default Applications]
+x-scheme-handler/http=firefox.desktop
+x-scheme-handler/https=firefox.desktop
+x-scheme-handler/chrome=firefox.desktop
+text/html=firefox.desktop
+application/x-extension-htm=firefox.desktop
+application/x-extension-html=firefox.desktop
+application/x-extension-shtml=firefox.desktop
+application/xhtml+xml=firefox.desktop
+application/x-extension-xhtml=firefox.desktop
+application/x-extension-xht=firefox.desktop
+x-scheme-handler/notion=notion-app.desktop
+
+image/jpeg=viewnior.desktop
+image/jpg=viewnior.desktop
+image/gif=viewnior.desktop
+image/png=viewnior.desktop
+image/svg=vienior.desktop
+
+application/pdf=okularApplication_ghostview.desktop
+
+inode/directory=ranger.desktop
+
+[Added Associations]
+application/pdf=okular.desktop
+
+

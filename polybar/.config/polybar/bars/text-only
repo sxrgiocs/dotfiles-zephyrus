@@ -1,0 +1,351 @@
+;==========================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/polybar/polybar
+;
+;   The README contains a lot of inormation
+;
+;==========================================================
+
+[colors]
+;background = ${xrdb:color0:#222}
+background = #060F1A
+background-alt = #444
+;foreground = ${xrdb:color7:#222}
+foreground = #dfdfdf
+foreground-alt = #44475a
+primary = #ffb52a
+secondary = #e60053
+alert = #bd2c40
+
+black = #292745
+red = #ff4151
+green = #50fa7b
+yellow = #ffe680
+blue = #8591ff
+magenta = #ff79c6
+cyan = #8be9fd
+white = #bfbfbf
+orange = #ffb86c
+lime = #a2ff73
+
+[bar/mainbar]
+monitor = ${env:MONITOR}
+;monitor = ${env:MONITOR:fallback-value} 
+width = 100%
+height = 25
+;offset-x = 1%
+;offset-y = 1%
+radius = 0
+fixed-center = false
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 1
+line-color = #f00
+
+border-size = 0
+border-color = #f8f8f2
+
+padding-left = 0
+padding-right = 0
+
+module-margin-left = 1
+module-margin-right = 1
+
+font-0 = JetBrains Mono:style=bold:pixelsize=9.5;3
+font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+font-2 = siji:pixelsize=10;1
+font-3 = Hack Nerd Font:pixelsize=10:4
+
+modules-left = bspwm xwindow
+modules-center = 
+modules-right = spotify memory temperature backlight pulseaudio battery wlan date 
+
+tray-position = right
+tray-padding = 2
+;tray-background = #0063ff
+
+wm-restack = bspwm
+;wm-restack = i3
+
+;override-redirect = true
+
+;scroll-up = bspwm-desknext
+;scroll-down = bspwm-deskprev
+
+;scroll-up = i3wm-wsnext
+;scroll-down = i3wm-wsprev
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+separator = %{F#44475a}|%{F-}
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:30:...%
+label-foreground = ${colors.white}
+
+[module/xkeyboard]
+type = internal/xkeyboard
+blacklist-0 = num lock
+
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-underline = ${colors.secondary}
+
+label-layout = %layout%
+label-layout-underline = ${colors.secondary}
+
+label-indicator-padding = 1
+label-indicator-margin = 1
+label-indicator-background = ${colors.secondary}
+label-indicator-underline = ${colors.secondary}
+
+[module/filesystem]
+type = internal/fs
+interval = 25
+
+mount-0 = /
+
+label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
+label-unmounted = %mountpoint% not mounted
+label-unmounted-foreground = ${colors.foreground-alt}
+
+[module/bspwm]
+type = internal/bspwm
+
+label-focused = %name%
+label-focused-background = ${colors.blue}
+label-focused-foreground = ${colors.background}
+label-focused-padding = 1
+
+label-occupied = %name%
+label-occupied-padding = 1
+label-occupied-foreground = ${colors.blue}
+
+label-urgent = %name%!
+label-urgent-background = #ff5555
+label-urgent-padding = 1
+
+label-empty = %name%
+label-empty-foreground = ${colors.foreground-alt}
+label-empty-padding = 1
+
+; Separator in between workspaces
+; label-separator = |
+
+[module/backlight]
+type = internal/backlight
+format = <label> <ramp> 
+label = BRI:
+label-foreground = ${colors.yellow}
+ramp-foreground = ${colors.yellow}
+
+card = intel_backlight
+enable-scroll = true
+scroll-up = blight set +750
+scroll-down = blight set -750
+
+ramp-0 = 0%
+ramp-1 = 10%
+ramp-2 = 20%
+ramp-3 = 30%
+ramp-4 = 40%
+ramp-5 = 50%
+ramp-6 = 60%
+ramp-7 = 70%
+ramp-8 = 80%
+ramp-9 = 90%
+ramp-10 = 100%
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #f90000
+label = %percentage:2%%
+
+[module/memory]
+type = internal/memory
+interval = 2
+format-prefix =
+format-prefix-foreground = ${colors.red}
+format-foreground = ${colors.red}
+label = MEM: %percentage_used%%
+
+[module/wlan]
+type = internal/network
+interface = wlan0
+interval = 3.0
+
+format-connected = <label-connected>
+label-connected = %essid%
+label-connected-foreground = ${colors.magenta}
+
+format-disconnected = NO CONN
+;format-disconnected-underline = ${self.format-connected-underline}
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = ${colors.foreground-alt}
+
+ramp-signal-0 =
+ramp-signal-1 =
+ramp-signal-2 =
+ramp-signal-3 =
+ramp-signal-4 =
+ramp-signal-foreground = ${colors.foreground-alt}
+
+[module/eth]
+type = internal/network
+interface = enp0s20f0u4u3
+interval = 3.0
+
+format-connected-underline = #55aa55
+format-connected-prefix = " "
+format-connected-prefix-foreground = ${colors.foreground-alt}
+label-connected = %local_ip%
+
+format-disconnected =
+;format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = ${colors.foreground-alt}
+
+[module/date]
+type = internal/date
+interval = 5
+
+date = "%d-%m-%Y "
+
+time = %H:%M
+;time-alt = %H:%M:%S
+
+label-foreground = ${colors.foreground-alt}
+
+label = %time% %date%
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+label-volume = VOL: %percentage%%
+label-volume-foreground = ${colors.orange}
+
+label-muted = VOL: MUTED
+label-muted-foreground = ${colors.foreground-alt}
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = ADP0
+full-at = 98
+
+format-charging = <label-charging>
+label-charging = CHARGING: %percentage%%
+label-charging-foreground = ${colors.cyan}
+
+format-discharging = <ramp-capacity> <label-discharging>
+;format-discharging-underline = ${self.format-charging-underline}
+label-discharging-foreground = ${colors.cyan}
+
+format-full-prefix = "FULL: "
+format-full-prefix-foreground = ${colors.green}
+label-full-foreground = ${colors.green}
+
+ramp-capacity-0 = LOW:
+ramp-capacity-1 = BAT:
+ramp-capacity-2 = BAT:
+ramp-capacity-3 = BAT:
+ramp-capacity-4 = BAT:
+ramp-capacity-5 = BAT:
+ramp-capacity-foreground = ${colors.cyan}
+ramp-capacity-0-foreground = ${colors.red}
+
+
+animation-charging-0 = CHARGE:
+;animation-charging-1 =  ‎
+;animation-charging-2 =  ‎
+animation-charging-foreground = ${colors.yellow}
+
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 60
+
+format = TEMP: <label>
+format-warn = TEMP: <label-warn>
+
+label = %temperature-c%
+label-warn = %temperature-c%
+label-warn-foreground = ${colors.secondary}
+format-warn-foreground = ${colors.secondary}
+format-foreground = ${colors.blue}
+
+
+[module/powermenu]
+type = custom/menu
+
+expand-right = true
+
+format-spacing = 1
+
+label-open = 
+label-open-foreground = ${colors.secondary}
+label-close =  cancel
+label-close-foreground = ${colors.secondary}
+label-separator = |
+label-separator-foreground = ${colors.foreground-alt}
+
+menu-0-0 = reboot
+menu-0-0-exec = menu-open-1
+menu-0-1 = power off
+menu-0-1-exec = menu-open-2
+
+menu-1-0 = cancel
+menu-1-0-exec = menu-open-0
+menu-1-1 = reboot
+menu-1-1-exec = sudo reboot
+
+menu-2-0 = power off
+menu-2-0-exec = sudo poweroff
+menu-2-1 = cancel
+menu-2-1-exec = menu-open-0
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+;pseudo-transparency = false
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+
+; vim:ft=dosini
+
+[module/spotify]
+type = custom/script
+interval = 1
+format = <label>
+exec = python3 /home/sergio/.config/polybar/scripts/spotify_status.py -f '{artist} - {song}' 
+click-left = playerctl play-pause spotify
+scroll-up = playerctl next spotify
+scroll-down = playerctl previous spotify
+
+label-foreground = ${colors.lime}
+format-prefix-foreground = ${colors.lime}
+
