@@ -48,7 +48,7 @@ back_clear = #14162b
 
 [bar/laptop]
 monitor = eDP-1
-border-size = 7
+border-size = 5
 border-color = ${colors.transparent}
 height = 32
 dpi = 125
@@ -99,16 +99,16 @@ cursor-scroll = ns-resize
 
 [bar/desktop]
 monitor = HDMI-1
-border-size = 7
+border-size = 1
 border-color = ${colors.transparent}
 height = 22
 
 background = ${colors.transparent}
 foreground = ${colors.foreground}
 
-width=99.7%
-offset-x = 3px
-offset-y = 0.3%
+width=99.5%
+offset-x = 0.2%
+offset-y = 0.7%
 
 ; Aesthetic adjustments
 line-size = 1
@@ -356,14 +356,14 @@ label-warn-foreground = ${colors.red}
 format-warn-prefix-foreground = ${colors.red}
 
 ; SPOTIFY
+
 [module/spotify]
 type = custom/script
 tail = true
+format = <label>
+exec = $HOME/.config/polybar/scripts/scroller.sh
 
 format-prefix = " "
-format = <label>
-exec = ~/.config/polybar/scripts/scroll_spotify_status.sh
-
 format-prefix-foreground = ${colors.green}
 format-prefix-background = ${colors.foreground-alt}
 
@@ -373,6 +373,5 @@ label-background = ${colors.foreground-alt}
 click-left = playerctl --player=spotify play-pause
 scroll-up = playerctl --player=spotify next
 scroll-down = playerctl --player=spotify previous
-
 ;for syntax highlighting
 ; vim:ft=dosini 

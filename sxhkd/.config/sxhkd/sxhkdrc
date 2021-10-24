@@ -202,11 +202,11 @@ XF86AudioMute
 
 # Lower brightness
 XF86MonBrightnessDown
-    blight -d amdgpu_bl0 set -25.5
+    blight -d amdgpu_bl1 set -25.5
 
 # Raise Brigtness
 XF86MonBrightnessUp
-    blight -d amdgpu_bl0 set +25.5
+    blight -d amdgpu_bl1 set +25.5
 
 ########################################################################
 #                    L A U N C H  P R O G R A M S                      #
@@ -254,11 +254,11 @@ XF86KbdBrightnessDown
 XF86KbdBrightnessUp
     asusctl -n
 
-XF86Launch3                 # this is the aura keyboard key
-    asusctl led-mode -n
-
-XF86Launch4                 # fan control
+XF86Launch4
     asusctl profile -n
 
+XF86Launch1
+    notify-send "$(asusctl profile -p | grep 'Active')" & notify-send "$(cat /etc/asusd/asusd.conf | grep bat)"
+
 XF86Sleep
-	systemctl suspend & betterlockscreen -l
+    betterlockscreen -l & systemctl suspend

@@ -119,6 +119,9 @@ alias fuckspace='for f in *\ *; do mv "$f" "${f// /_}"; done'
 alias docked='startx /home/sergio/.xinitrc_docked'
 alias mobile='startx /home/sergio/.xinitrc_mobile'
 
+# Get key for remapping
+alias keys='xev | awk -F'"'"'[ )]+'"'"' '"'"'/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'"'"''
+
 # Lsd
 alias ll='lsd -lh --group-dirs=first'
 alias la='lsd -a --group-dirs=first'
@@ -134,8 +137,9 @@ alias catl='/usr/bin/bat'
 # Vim and neovim
 alias vimrc='ranger /home/sergio/.config/nvim'
 
-# Solve pipes.sh error with lines
+# TUI programs with issues with unicode
 alias pipes.sh='export LC_ALL="en_US.UTF-8" && pipes.sh'
+alias btop='btop --utf-force'
 
 # Config files
 # alias config='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME/'
@@ -153,8 +157,7 @@ alias cleanup='sudo pacman -Rns $(pacman -Qtdq)' # remove orphaned packages
 alias uninstall='sudo pacman -Rns'
 alias install='sudo pacman -S '
 alias backup='pacman -Qqe > $HOME/.config/0.Packages/all_packages.txt & pacman -Qqem > $HOME/.config/0.Packages/aur_packages.txt & pip list --user > $HOME/.config/0.Packages/pip-packages.txt'
-alias pacsearch='pacman -Slq | fzf -m --preview '"'"'pacman -Si {1}'"'"''
-alias yaysearch='yay -Slq | fzf --multi --preview '"'"'yay -Si {1}'"'"' | xargs -ro yay -S'
+alias pacfzf='yay -Slq | fzf --multi --preview '"'"'yay -Si {1}'"'"' | xargs -ro yay -S'
 
 # Colorize grep
 alias grep='grep --color=auto'

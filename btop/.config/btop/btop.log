@@ -143,3 +143,51 @@ Use --utf-force argument to force start if you're sure your terminal can handle 
 2021/10/15 (16:38:18) | ===> btop++ v.1.0.15
 2021/10/15 (16:38:18) | WARNING: No UTF-8 locale detected! Forcing start with --utf-force argument.
 2021/10/15 (16:38:18) | ERROR: Invalid size of hex value: 30d63f0
+
+2021/10/16 (19:39:40) | ===> btop++ v.1.0.15
+2021/10/16 (19:39:40) | WARNING: No UTF-8 locale detected! Forcing start with --utf-force argument.
+2021/10/16 (19:39:41) | ERROR: Invalid size of hex value: 30d63f0
+
+2021/10/16 (19:41:41) | ===> btop++ v.1.0.15
+2021/10/16 (19:41:41) | ERROR: No UTF-8 locale detected!
+Use --utf-force argument to force start if you're sure your terminal can handle it.
+
+2021/10/16 (19:41:44) | ===> btop++ v.1.0.15
+2021/10/16 (19:41:44) | WARNING: No UTF-8 locale detected! Forcing start with --utf-force argument.
+2021/10/16 (19:41:44) | ERROR: Invalid size of hex value: 30d63f0
+
+2021/10/22 (16:35:24) | ===> btop++ v.1.0.17
+2021/10/22 (16:35:24) | ERROR: No UTF-8 locale detected!
+Use --utf-force argument to force start if you're sure your terminal can handle it.
+
+2021/10/22 (16:35:27) | ===> btop++ v.1.0.17
+2021/10/22 (16:35:27) | WARNING: No UTF-8 locale detected! Forcing start with --utf-force argument.
+2021/10/22 (16:35:27) | ERROR: Invalid size of hex value: 30d63f0
+
+2021/10/23 (12:05:39) | ===> btop++ v.1.0.17
+2021/10/23 (12:05:39) | WARNING: No UTF-8 locale detected! Forcing start with --utf-force argument.
+2021/10/23 (12:05:39) | ERROR: Invalid size of hex value: 30d63f0
+
+2021/10/23 (12:05:43) | ===> btop++ v.1.0.17
+2021/10/23 (12:05:43) | WARNING: No UTF-8 locale detected! Forcing start with --utf-force argument.
+2021/10/23 (12:05:43) | ERROR: Invalid size of hex value: 30d63f0
+
+2021/10/23 (13:24:02) | ===> btop++ v.1.0.17
+2021/10/23 (13:24:02) | ERROR: No UTF-8 locale detected!
+Use --utf-force argument to force start if you're sure your terminal can handle it.
+
+2021/10/23 (13:24:04) | ===> btop++ v.1.0.17
+2021/10/23 (13:24:04) | WARNING: No UTF-8 locale detected! Forcing start with --utf-force argument.
+2021/10/23 (13:24:04) | ERROR: Invalid size of hex value: 30d63f0
+
+2021/10/23 (16:53:00) | ===> btop++ v.1.0.19
+2021/10/23 (16:53:00) | ERROR: No UTF-8 locale detected!
+Use --utf-force argument to force start if you're sure your terminal can handle it.
+
+2021/10/23 (16:54:12) | ===> btop++ v.1.0.19
+2021/10/23 (16:54:12) | WARNING: No UTF-8 locale detected! Forcing start with --utf-force argument.
+2021/10/23 (16:54:12) | ERROR: Invalid size of hex value: 30d63f0
+
+2021/10/24 (12:25:03) | ===> btop++ v.1.0.19
+2021/10/24 (12:25:03) | WARNING: No UTF-8 locale detected! Forcing start with --utf-force argument.
+2021/10/24 (12:25:03) | ERROR: Invalid size of hex value: 30d63f0
