@@ -38,6 +38,7 @@ prompt {
     padding:                        1% 10% 1% 0%;
 	background-color: 	            @off;
 	text-color: 		            @foreground;
+    position:                       center;
 }
 
 textbox-prompt-colon {
@@ -46,14 +47,15 @@ textbox-prompt-colon {
 	background-color: 	            @off;
 	text-color: 		            @foreground;
     padding:                        1% 0.5% 1% 0.5%;
+    position:                       center;
 }
 
 inputbar {
     children: 		    	        [ textbox-prompt-colon, prompt ];
     background-color:               @background-light;
-    text-color:                     @foreground;
+    text-color:                     @background;
     expand:                         false;
-    margin:                         0% 57% 0% 0%;
+    margin:                         0% 25.5% 0% 0%;
     border-radius:                  5px;
     padding:                        0.5%;
     position:                       center;

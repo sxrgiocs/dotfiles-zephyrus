@@ -37,7 +37,7 @@ gray = #c3c7e0
 
 transparent = #00
 
-background = #0a0a17
+background = #07071a
 foreground = #383d63
 foreground-alt = #22253d
 back_clear = #14162b
@@ -48,18 +48,20 @@ back_clear = #14162b
 
 [bar/laptop]
 monitor = eDP-1
-border-size = 5
-border-color = ${colors.transparent}
+border-size = 7
+border-color = ${colors.background}
 height = 32
 dpi = 125
 
-background = ${colors.transparent}
+background = ${colors.background}
 foreground = ${colors.foreground}
 
+bottom=True
+
 ; Give transparent space around the bar
-width=99.7%
-offset-x = 3px
-offset-y = 0.3%
+width=99.6%
+offset-x = 4px
+offset-y = 4px
 #offset-y = 0.7%
 
 ; Aesthetic adjustments
@@ -99,16 +101,18 @@ cursor-scroll = ns-resize
 
 [bar/desktop]
 monitor = HDMI-1
-border-size = 1
-border-color = ${colors.transparent}
+border-size = 5
+border-color = ${colors.background}
 height = 22
 
-background = ${colors.transparent}
+background = ${colors.background}
 foreground = ${colors.foreground}
 
-width=99.5%
-offset-x = 0.2%
-offset-y = 0.7%
+bottom = True
+
+width=99.6%
+offset-x = 4px
+offset-y = 4px
 
 ; Aesthetic adjustments
 line-size = 1

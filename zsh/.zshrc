@@ -247,6 +247,7 @@ ex ()
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /home/sergio/Programs/zsh-plugins/zsh-window-title.zsh
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

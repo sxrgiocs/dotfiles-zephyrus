@@ -6,7 +6,7 @@
 ## Twitter : @adi1090x
 
 theme="locate"
-color="themes/NightParrot.rasi"
+color="themes/Galaxy.rasi"
 
 dir="/home/sergio/.config/rofi/locate/"
 

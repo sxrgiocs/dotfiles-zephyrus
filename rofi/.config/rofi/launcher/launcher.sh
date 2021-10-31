@@ -7,14 +7,14 @@
 
 style="box"
 dir="$HOME/.config/rofi/launcher"
-color="themes/NightParrot.rasi"
+color="themes/Galaxy.rasi"
 
 ALPHA="#00000000"
-BG="#14162b"
+BG="#0f0b29"
 FG="#ffffff"
 SELECT="#383d63"
 
-ACCENT="#080814"
+ACCENT="#070417"
 
 # overwrite colors file
 cat > $dir/"$color" <<- EOF

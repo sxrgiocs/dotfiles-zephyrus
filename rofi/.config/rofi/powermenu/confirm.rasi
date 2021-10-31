@@ -5,7 +5,7 @@ configuration {
 	sidebar-mode: 		    false;
 }
 
-@import "themes/NightParrot.rasi"
+@import "themes/Galaxy.rasi"
 
 * {
     background-color:       @off;

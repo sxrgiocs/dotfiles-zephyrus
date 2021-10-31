@@ -10,15 +10,12 @@
 xrandr --setprovideroutputsource modesetting NVIDIA-0
 xrandr --auto
 
-userresources=$HOME/.Xresources_docked
 usermodmap=$HOME/.Xmodmap
-sysresources=/etc/X11/xinit/.Xresources_docked
 sysmodmap=/etc/X11/xinit/.Xmodmap
-
-xrdb -merge ~/.Xresources_docked
+userresources=$HOME/.Xresources_docked
+sysresources=/etc/X11/xinit/.Xresources_docked
 
 # merge in defaults and keymaps
-
 if [ -f $sysresources ]; then
     xrdb -merge $sysresources
 fi

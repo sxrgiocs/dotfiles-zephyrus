@@ -51,4 +51,4 @@ sxhkd &
 asusctl -c 60 &
 asusctl profile -P quiet &
 
-exec bspwm -c /home/sergio/.config/bspwm/bspwmrc_laptop
+exec bspwm
