@@ -59,7 +59,7 @@ foreground = ${colors.foreground}
 bottom=True
 
 ; Give transparent space around the bar
-width=99.6%
+width=2552
 offset-x = 4px
 offset-y = 4px
 #offset-y = 0.7%
@@ -110,7 +110,7 @@ foreground = ${colors.foreground}
 
 bottom = True
 
-width=99.6%
+width= 1912px
 offset-x = 4px
 offset-y = 4px
 
@@ -345,7 +345,7 @@ format-full-prefix-foreground = ${colors.green}
 [module/temperature]
 type = internal/temperature
 thermal-zone = 0
-warn-temperature = 70
+warn-temperature = 80
 
 format-prefix = " "
 label = %temperature-c%
@@ -377,5 +377,29 @@ label-background = ${colors.foreground-alt}
 click-left = playerctl --player=spotify play-pause
 scroll-up = playerctl --player=spotify next
 scroll-down = playerctl --player=spotify previous
-;for syntax highlighting
-; vim:ft=dosini 
+
+[module/menu-apps]
+type = custom/menu
+expand-right = true
+
+label-open = Menu
+label-close = X
+label-separator = |
+format-spacing = 1
+
+menu-0-0 = Rofi
+menu-0-0-exec = menu-open-1
+menu-0-1 = Power
+menu-0-1-exec = menu-open-2
+
+menu-1-0 = rofi
+menu-1-0-exec = rofi -show windowcd
+menu-1-1 = Spotify
+menu-1-1-exec = spotify &
+
+menu-2-0 = Reboot
+menu-2-0-exec = systemctl reboot
+menu-2-1 = Shutdown
+menu-2-1-exec = systemctl poweroff
+
+; vim:ft=dosini

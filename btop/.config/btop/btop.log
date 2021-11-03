@@ -195,3 +195,15 @@ Use --utf-force argument to force start if you're sure your terminal can handle 
 2021/10/24 (22:47:17) | ===> btop++ v.1.0.19
 2021/10/24 (22:47:17) | WARNING: No UTF-8 locale detected! Forcing start with --utf-force argument.
 2021/10/24 (22:47:17) | ERROR: Invalid size of hex value: 30d63f0
+
+2021/10/31 (23:19:50) | ===> btop++ v.1.0.20
+2021/10/31 (23:19:50) | WARNING: No UTF-8 locale detected! Forcing start with --utf-force argument.
+2021/10/31 (23:19:50) | ERROR: Invalid size of hex value: 30d63f0
+
+2021/10/31 (23:26:39) | ===> btop++ v.1.0.20
+2021/10/31 (23:26:39) | WARNING: No UTF-8 locale detected! Forcing start with --utf-force argument.
+2021/10/31 (23:26:39) | ERROR: Invalid size of hex value: 30d63f0
+
+2021/11/01 (11:33:09) | ===> btop++ v.1.0.20
+2021/11/01 (11:33:09) | WARNING: No UTF-8 locale detected! Forcing start with --utf-force argument.
+2021/11/01 (11:33:09) | ERROR: Invalid size of hex value: 30d63f0

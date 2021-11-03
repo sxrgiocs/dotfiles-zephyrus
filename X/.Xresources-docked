@@ -17,7 +17,8 @@ Xcursor.theme: Bibata-Modern-Ice
 
 ! DARK OCEAN COLOR SCHEME
 #define FOREGROUND #f8f8f2
-#define BACKGROUND #0a0a17
+!#define BACKGROUND #0a0a17
+#define BACKGROUND #07071a
 
 #define COLOR0  #22253d
 #define COLOR8  #383d63
@@ -54,3 +55,5 @@ Xcursor.theme: Bibata-Modern-Ice
 *.color13: COLOR13
 *.color14: COLOR14
 *.color15: COLOR15
+
+!vim:ft=dosini

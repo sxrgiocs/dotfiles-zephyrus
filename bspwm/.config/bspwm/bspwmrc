@@ -9,6 +9,7 @@
 
 sxhkd &
 nm-applet --indicator &
+xset s off -dpms
 
 ########################################################################
 #                            M O N I T O R S                           #

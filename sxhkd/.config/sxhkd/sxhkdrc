@@ -202,11 +202,11 @@ XF86AudioMute
 
 # Lower brightness
 XF86MonBrightnessDown
-    blight -d amdgpu_bl1 set -25.5
+    blight -d "$(ls /sys/class/backlight/)" set -25.5
 
 # Raise Brigtness
 XF86MonBrightnessUp
-    blight -d amdgpu_bl1 set +25.5
+    blight -d "$(ls /sys/class/backlight/)" set +25.5
 
 ########################################################################
 #                    L A U N C H  P R O G R A M S                      #
