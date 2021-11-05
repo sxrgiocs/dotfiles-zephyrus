@@ -7,9 +7,6 @@
 # ██╔╝ ██╗██║██║ ╚████║██║   ██║   ██║  ██║╚██████╗
 # ╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝╚═╝   ╚═╝   ╚═╝  ╚═╝ ╚═════╝
 
-xrandr --setprovideroutputsource modesetting NVIDIA-0
-xrandr --auto
-
 usermodmap=$HOME/.Xmodmap
 sysmodmap=/etc/X11/xinit/.Xmodmap
 userresources=$HOME/.Xresources_docked

@@ -73,7 +73,7 @@ case $chosen in
 			if [[ "$DESKTOP_SESSION" == "Openbox" ]]; then
 				openbox --exit
 			elif [[ "$DESKTOP_SESSION" == "bspwm" ]]; then
-				bspc quit
+			    logout
 			elif [[ "$DESKTOP_SESSION" == "i3" ]]; then
 				i3-msg exit
 			fi
