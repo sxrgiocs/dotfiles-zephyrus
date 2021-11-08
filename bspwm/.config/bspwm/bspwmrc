@@ -77,8 +77,6 @@ bspc rule -a Gnome-calculator state=floating follow=on
 bspc rule -a Blueman-manager state=floating follow=on center=true
 bspc rule -a MEGAsync state=floating follow=on rectangle=402x569 center=true
 
-bspc config pointer_modifier mod4 # mod4 = super key
+#bspc config pointer_modifier mod4 # mod4 = super key
 bspc config pointer_action1 move # super + left click
 bspc config pointer_action2 resize_corner # super + right click
-
-

@@ -5,7 +5,7 @@
 ## Github  : @adi1090x
 ## Twitter : @adi1090x
 
-style="box"
+style="applet"
 dir="$HOME/.config/rofi/launcher"
 color="themes/Galaxy.rasi"
 

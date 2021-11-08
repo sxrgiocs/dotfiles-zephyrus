@@ -8,15 +8,15 @@
  */
 
 configuration {
-    font:	    		    "Google Sans 10";
+    font:	    		            "Google Sans Medium 10";
     show-icons:                     true;
-    icon-theme: 		    "Papirus";
-    display-drun: 	            "";
+    icon-theme: 		            "Papirus";
+    display-drun: 	                "";
     drun-display-format:            "{name}";
     disable-history:                false;
     fullscreen:                     false;
-    hide-scrollbar: 		    true;
-    sidebar-mode: 		    false;
+    hide-scrollbar: 		        true;
+    sidebar-mode: 		            false;
 }
 
 @import "themes/NightParrot.rasi"
@@ -31,14 +31,14 @@ window {
     transparency:                   "real";
     background-color:               @bg;
     text-color:                     @fg;
-	border:			    0px;
-	border-color:		    @ac;
+	border:			                0px;
+	border-color:		            @ac;
     border-radius:                  5px;
-	height:			    100%;
-	width:			    18%;
-    location:                       east;
-    x-offset:                       0;
-    y-offset:                       0;
+	height:			                70%;
+	width:			                16%;
+    location:                       west;
+    x-offset:                       0.5%;
+    y-offset:                       11%;
 }
 
 prompt {
@@ -46,7 +46,7 @@ prompt {
 	padding: 	            0.10% 1% 0% -0.5%;
 	background-color: 	    @al;
 	text-color: 		    @se;
-	font:			    "Jetbrains Mono Nerd Font 10";
+	font:			        "Google Sans Medium 10";
 }
 
 entry {
@@ -65,9 +65,9 @@ inputbar {
     background-color:               @ac;
     text-color:                     @fg;
     expand:                         false;
-	border:			    5px;
+	border:			                5px;
     border-radius:                  5px;
-	border-color:		    @bg;
+	border-color:		            @bg;
     margin:                         0% 0% 0% 0%;
     padding:                        1.5%;
 }
@@ -76,8 +76,8 @@ listview {
     background-color:               @al;
     padding:                        0px;
     columns:                        1;
-    lines:                          10;
-    spacing:                        0%;
+    lines:                          15;
+    spacing:                        -1%;
     cycle:                          false;
     dynamic:                        true;
     layout:                         vertical;

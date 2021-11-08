@@ -117,7 +117,7 @@ alias fuckspace='for f in *\ *; do mv "$f" "${f// /_}"; done'
 
 # StartX DPI
 alias docked='startx /home/sergio/.xinitrc_docked'
-alias mobile='startx /home/sergio/.xinitrc_mobile'
+alias laptop='startx /home/sergio/.xinitrc_laptop'
 
 # Get key for remapping
 alias keys='xev | awk -F'"'"'[ )]+'"'"' '"'"'/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'"'"''
@@ -157,7 +157,7 @@ alias cleanup='sudo pacman -Rns $(pacman -Qtdq)' # remove orphaned packages
 alias uninstall='sudo pacman -Rns'
 alias install='sudo pacman -S '
 alias backup='pacman -Qqe > $HOME/.config/0.Packages/all_packages.txt & pacman -Qqem > $HOME/.config/0.Packages/aur_packages.txt & pip list --user > $HOME/.config/0.Packages/pip-packages.txt'
-alias pacfzf='yay -Slq | fzf --multi --preview '"'"'yay -Si {1}'"'"' | xargs -ro yay -S'
+alias pzf='yay -Slq | fzf --multi --preview '"'"'yay -Si {1}'"'"' | xargs -ro yay -S'
 
 # Colorize grep
 alias grep='grep --color=auto'

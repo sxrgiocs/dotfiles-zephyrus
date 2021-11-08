@@ -7,12 +7,10 @@
 # ██╔╝ ██╗██║██║ ╚████║██║   ██║   ██║  ██║╚██████╗
 # ╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝╚═╝   ╚═╝   ╚═╝  ╚═╝ ╚═════╝
 
-userresources=$HOME/.Xresources_mobile
+userresources=$HOME/.Xresources_laptop
 usermodmap=$HOME/.Xmodmap
-sysresources=/etc/X11/xinit/.Xresources
+sysresources=/etc/X11/xinit/.Xresources_laptop
 sysmodmap=/etc/X11/xinit/.Xmodmap
-
-xrdb -merge ~/.Xresources_mobile
 
 # merge in defaults and keymaps
 
@@ -48,7 +46,10 @@ nitrogen --restore &
 dunst &
 udiskie &
 sxhkd &
+
+# Zephyrus commands
 asusctl -c 60 &
 asusctl profile -P quiet &
+asusctl led-mode --sleep-enable false &
 
 exec bspwm

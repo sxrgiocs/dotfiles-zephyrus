@@ -33,7 +33,6 @@ fi
 xsetroot -cursor_name left_ptr
 
 # start some nice programs
-
 if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
   [ -x "$f" ] && . "$f"
@@ -45,7 +44,10 @@ nitrogen --restore &
 dunst &
 udiskie &
 sxhkd &
+
+# Zephyrus commands
 asusctl -c 60 &
 asusctl profile -P quiet &
+asusctl led-mode --sleep-enable false &
 
 exec bspwm

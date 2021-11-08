@@ -73,7 +73,7 @@ module-margin-right = 0
 ;separator = %{F#44475a}|%{F-}
 
 ; Fonts
-font-0 = JetBrains Mono:style=bold:pixelsize=9.5;4
+font-0 = Jetbrains Mono:style=bold:pixelsize=9.5;4
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = Font Awesome 5 Free Solid:size=10;4
 font-3 = JetBrains Mono Nerd Font:style=bold:pixelsize=15;4
@@ -130,7 +130,7 @@ font-3 = JetBrains Mono Nerd Font:style=bold:pixelsize=15;4
 font-4 = JetBrains Mono Nerd Font:style=bold:pixelsize=12;3
 
 ; Modules
-modules-left = bspwm empty-small round-left spotify round-right empty-small xwindow
+modules-left = empty-small rofi bspwm empty-small round-left spotify round-right empty-small xwindow
 modules-center = 
 modules-right = round-left cpu empty-color memory round-right empty temperature empty pulseaudio empty battery empty round-left date round-right empty-small
 
@@ -401,5 +401,15 @@ menu-2-0 = Reboot
 menu-2-0-exec = systemctl reboot
 menu-2-1 = Shutdown
 menu-2-1-exec = systemctl poweroff
+
+[module/rofi]
+type = custom/text
+
+content = %{T5} |%{T-}
+content-background = ${colors.background}
+content-foreground = ${colors.foreground}
+
+click-left = /home/sergio/.config/rofi/launcher/launcher.sh
+click-right = exec rofi -show combi
 
 ; vim:ft=dosini
