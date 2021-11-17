@@ -5,11 +5,12 @@
 ## Github  : @adi1090x
 ## Twitter : @adi1090x
 
-style="text"
+style="winicons"
 
 dir="$HOME/.config/rofi/launcher/styles"
 
-rofi -no-lazy-grab -show run  \
+rofi -no-lazy-grab -show window  \
 -modi run,drun,window,ssh,filebrowser \
--theme $dir/"$style" 
+-theme $dir/"$style" \
+-kb-accept-entry '!Alt-Tab' -kb-row-down Alt-Tab \
 

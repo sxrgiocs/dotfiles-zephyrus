@@ -26,21 +26,24 @@ super + p
 super + shift + d
     /home/sergio/.config/rofi/launcher/launcher_all.sh
 
-super + ctrl + p
-    rofi -modi windowcd -show windowcd -width 50 -display-windowcd "Windows "
-
 # make sxhkd reload its configuration files:
 super + Escape
     pkill -USR1 -x sxhkd
 
-#rofi system menu
+#rofi power menu
 super + shift + p
-    /home/sergio/.config/rofi/powermenu/powermenu.sh
+    /home/sergio/.config/rofi/applets/network.sh
 
 # rofi finder
-
 super + d
-    /home/sergio/.config/rofi/locate/rofi-locate.sh
+    /home/sergio/.config/rofi/launcher/files.sh
+
+shift + alt + Tab 
+    /home/sergio/.config/rofi/launcher/launcher_hidden.sh
+
+alt + Tab 
+    /home/sergio/.config/rofi/launcher/window_launcher.sh
+
 ########################################################################
 #                       B S P W M  H O T K E Y S                       #
 ########################################################################
@@ -160,11 +163,6 @@ super + alt + {Left,Down,Up,Right}
 super + shift + i
 	/home/sergio/.config/bspwm/scripts/winhide.sh
 
-shift + alt + Tab 
-    /home/sergio/.config/rofi/windows/launcher_hidden.sh
-
-alt + Tab 
-    /home/sergio/.config/rofi/windows/launcher.sh
 #######################################################################
 #                          C U S T O M                                #
 #######################################################################

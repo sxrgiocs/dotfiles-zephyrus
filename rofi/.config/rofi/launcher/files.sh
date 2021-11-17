@@ -9,7 +9,7 @@ style="text"
 
 dir="$HOME/.config/rofi/launcher/styles"
 
-rofi -no-lazy-grab -show run  \
+rofi -no-lazy-grab -show filebrowser  \
 -modi run,drun,window,ssh,filebrowser \
--theme $dir/"$style" 
+-theme $dir/"$style" -disable-history
 

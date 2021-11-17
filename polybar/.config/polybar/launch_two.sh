@@ -19,10 +19,11 @@
 #                  M U L T I P L E  D I S P L A Y S                    #
 ########################################################################
 
- killall -q polybar
- while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
+killall -q polybar
+
+while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
  
- IFS=$'\n'
+IFS=$'\n'
  
 if polybar --list-monitors | grep "HDMI-1"; then
      TRAY_POSITION=right MONITOR=$MONITOR polybar desktop & polybar laptop

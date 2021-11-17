@@ -80,9 +80,9 @@ font-3 = JetBrains Mono Nerd Font:style=bold:pixelsize=15;4
 font-4 = JetBrains Mono Nerd Font:style=bold:pixelsize=12;4
 
 ; Modules
-modules-left = bspwm empty-small round-left spotify round-right empty-small xwindow
+modules-left = empty-small launcher bspwm empty-small round-left  round-right empty-small xwindow
 modules-center = 
-modules-right = round-left cpu empty-color memory round-right empty temperature empty pulseaudio empty battery empty round-left date round-right empty-small
+modules-right = round-left cpu empty-color memory round-right empty temperature empty pulseaudio empty battery empty round-left date round-right empty-small wlan eth empty-small
 
 ; Tray
 tray-position = right
@@ -130,9 +130,9 @@ font-3 = JetBrains Mono Nerd Font:style=bold:pixelsize=15;4
 font-4 = JetBrains Mono Nerd Font:style=bold:pixelsize=12;3
 
 ; Modules
-modules-left = empty-small rofi bspwm empty-small round-left spotify round-right empty-small xwindow
+modules-left = empty-small launcher bspwm empty-small round-left  round-right empty-small xwindow
 modules-center = 
-modules-right = round-left cpu empty-color memory round-right empty temperature empty pulseaudio empty battery empty round-left date round-right empty-small
+modules-right = round-left cpu empty-color memory round-right empty temperature empty pulseaudio empty battery empty round-left date round-right empty-small wlan eth empty-small
 
 ; Tray
 tray-position = right
@@ -259,33 +259,28 @@ format-background = ${colors.foreground-alt}
 ; WIRELESS NETWORK
 [module/wlan]
 type = internal/network
-interface = wlp3s0
+interface = wlp4s0
 interval = 3.0
 
 format-connected = <label-connected>
-label-connected = ""
-label-connected-foreground = ${colors.purple}
+label-connected =  %{A1:~/.config/rofi/applets/network.sh:}﬉%{A}
+label-connected-foreground = ${colors.gray}
 
 format-disconnected = <label-disconnected>
-label-disconnected = " "
-label-disconnected-foreground = ${colors.foreground_alt}
+label-disconnected =  %{A1:~/.config/rofi/applets/network.sh:}﬉%{A}
+label-disconnected-foreground = ${colors.black}
 
 ; ETHERNET (Not formatted)
 [module/eth]
 type = internal/network
-interface = enp0s20f0u4u3
+interface = enp3s0
 interval = 3.0
 
-format-connected-underline = #55aa55
-format-connected-prefix = " "
-format-connected-prefix-foreground = ${colors.foreground-alt}
-label-connected = %local_ip%
+format-connected = <label-connected>
+label-connected =  %{A1:nm-connection-editor:}%{A}
+label-connected-foreground = ${colors.purple}
 
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
+format-disconnected = 
 
 ; DATE AND TIME
 [module/date]
@@ -387,8 +382,8 @@ label-close = X
 label-separator = |
 format-spacing = 1
 
-menu-0-0 = Rofi
-menu-0-0-exec = menu-open-1
+menu-0-0 = WLAN
+menu-0-0-exec = kitty -e nmtui
 menu-0-1 = Power
 menu-0-1-exec = menu-open-2
 
@@ -402,10 +397,10 @@ menu-2-0-exec = systemctl reboot
 menu-2-1 = Shutdown
 menu-2-1-exec = systemctl poweroff
 
-[module/rofi]
+[module/launcher]
 type = custom/text
 
-content = %{T5} |%{T-}
+content = %{T5} |%{T-}
 content-background = ${colors.background}
 content-foreground = ${colors.foreground}
 

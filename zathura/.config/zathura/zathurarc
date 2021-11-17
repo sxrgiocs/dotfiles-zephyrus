@@ -9,6 +9,6 @@ set recolor-darkcolor "#ffffff" # this is white
 set recolor-lightcolor "#07071a" #this is dark blue
 
 set statusbar-bg "#07071a"
-set statusbar-fg "#353d63"
+set statusbar-fg "#ffbe5c"
 
 set selection-clipboard clipboard

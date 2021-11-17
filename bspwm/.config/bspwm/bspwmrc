@@ -8,8 +8,6 @@
 # ╚═════╝ ╚══════╝╚═╝      ╚══╝╚══╝ ╚═╝     ╚═╝
 
 sxhkd &
-nm-applet --indicator &
-xset s off -dpms
 
 ########################################################################
 #                            M O N I T O R S                           #
@@ -42,15 +40,15 @@ done &
 #                           A U T O S T A R T                          #
 ########################################################################
 
-picom --experimental-backends &
+#picom --experimental-backends &
 /home/sergio/.config/polybar/launch_two.sh &
 
 ########################################################################
 #                         A P P E A R A N C E                          #
 ########################################################################
 
-bspc config border_width         0
-bspc config window_gap           4
+bspc config border_width        0 
+bspc config window_gap          4
 
 bspc config normal_border_color "#0a0a17"
 bspc config active_border_color "#0a0a17"
@@ -71,11 +69,12 @@ bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 bspc rule -a Zathura state=tiled
-bspc rule -a Pavucontrol state=floating follow=on rectangle=630x630 center=true
+bspc rule -a Pavucontrol state=floating follow=on center=true
 bspc rule -a Pcmanfm state=floating center=true
 bspc rule -a Gnome-calculator state=floating follow=on
 bspc rule -a Blueman-manager state=floating follow=on center=true
 bspc rule -a MEGAsync state=floating follow=on rectangle=402x569 center=true
+bspc rule -a Nm-connection-editor state=floating follow=on center=true
 
 #bspc config pointer_modifier mod4 # mod4 = super key
 bspc config pointer_action1 move # super + left click
