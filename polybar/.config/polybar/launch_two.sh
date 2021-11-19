@@ -23,15 +23,5 @@ killall -q polybar
 
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
  
-IFS=$'\n'
- 
-if polybar --list-monitors | grep "HDMI-1"; then
-     TRAY_POSITION=right MONITOR=$MONITOR polybar desktop & polybar laptop
-
-else 
-     MONITOR=eDP-1 polybar laptop
-
-     fi
- 
- killall xembedsniproxy
- 
+MONITOR="eDP" polybar --reload laptop &
+MONITOR="HDMI-A-0" polybar --reload desktop &

@@ -13,16 +13,16 @@ sxhkd &
 #                            M O N I T O R S                           #
 ########################################################################
 
-xrandr --output HDMI-1 --primary --left-of eDP-1 --size 1920x1080 &
+xrandr --output HDMI-A-0 --primary --left-of eDP --size 1920x1080 &
 
 bspc subscribe monitor | while read -r line; do
   case $line in monitor_add*|monitor_geometry*)
-	if [[ "$(xrandr | grep -w "HDMI-1 connected")" == *"HDMI-1 connected"* ]] 
+	if [[ "$(xrandr | grep -w "HDMI-A-0 connected")" == *"HDMI-A-0 connected"* ]] 
         then          
             #bspc monitor eDP-1 -d " 8" " 9" " 0"
-            bspc monitor eDP-1 -d "8" "9" "0"
+            bspc monitor eDP -d "8" "9" "0"
             #bspc monitor HDMI-1 -d " 1" " 2" " 3" " 4" " 5" " 6" " 7"
-            bspc monitor HDMI-1 -d "1" "2" "3" "4" "5" "6" "7"
+            bspc monitor HDMI-A-0 -d "1" "2" "3" "4" "5" "6" "7"
 
     else
         bspc monitor -d "1" "2" "3" "4" "5" "6" "7" "8" "9" "0"
@@ -40,7 +40,7 @@ done &
 #                           A U T O S T A R T                          #
 ########################################################################
 
-#picom --experimental-backends &
+picom --experimental-backends &
 /home/sergio/.config/polybar/launch_two.sh &
 
 ########################################################################

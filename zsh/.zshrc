@@ -24,6 +24,9 @@ setopt autocd
 export _JAVA_AWT_WM_NONPARENTING=1
 export _JAVA_AWT_WM_NONREPARENTING=1
 
+#HWA
+#export LIBVA_DRIVER_NAME=radeonsi
+
 # Paths
 #PYTHONPATH=/usr/lib/python38.zip:/usr/lib/python3.8:/usr/lib/python3.8/lib-dynload:/home/sergio/.local/lib/python3.8/site-packages:/usr/lib/python3.8/site-packages:/home/sergio/.local/bin
 PATH=/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/sergio/.local/bin

@@ -47,7 +47,7 @@ back_clear = #14162b
 ;########################################################################
 
 [bar/laptop]
-monitor = eDP-1
+monitor = ${env:MONITOR}
 border-size = 7
 border-color = ${colors.background}
 height = 32
@@ -80,7 +80,7 @@ font-3 = JetBrains Mono Nerd Font:style=bold:pixelsize=15;4
 font-4 = JetBrains Mono Nerd Font:style=bold:pixelsize=12;4
 
 ; Modules
-modules-left = empty-small launcher bspwm empty-small round-left  round-right empty-small xwindow
+modules-left = empty-small launcher bspwm empty-small round-left spotify round-right empty-small xwindow
 modules-center = 
 modules-right = round-left cpu empty-color memory round-right empty temperature empty pulseaudio empty battery empty round-left date round-right empty-small wlan eth empty-small
 
@@ -100,7 +100,7 @@ cursor-scroll = ns-resize
 ;########################################################################
 
 [bar/desktop]
-monitor = HDMI-1
+monitor = ${env:MONITOR}
 border-size = 5
 border-color = ${colors.background}
 height = 22
@@ -130,7 +130,7 @@ font-3 = JetBrains Mono Nerd Font:style=bold:pixelsize=15;4
 font-4 = JetBrains Mono Nerd Font:style=bold:pixelsize=12;3
 
 ; Modules
-modules-left = empty-small launcher bspwm empty-small round-left  round-right empty-small xwindow
+modules-left = empty-small launcher bspwm empty-small round-left spotify round-right empty-small xwindow
 modules-center = 
 modules-right = round-left cpu empty-color memory round-right empty temperature empty pulseaudio empty battery empty round-left date round-right empty-small wlan eth empty-small
 
@@ -259,15 +259,15 @@ format-background = ${colors.foreground-alt}
 ; WIRELESS NETWORK
 [module/wlan]
 type = internal/network
-interface = wlp4s0
+interface = wlan0
 interval = 3.0
 
 format-connected = <label-connected>
-label-connected =  %{A1:~/.config/rofi/applets/network.sh:}﬉%{A}
+label-connected =  %{A1:~/.config/rofi/applets/network.sh:}%{A}
 label-connected-foreground = ${colors.gray}
 
 format-disconnected = <label-disconnected>
-label-disconnected =  %{A1:~/.config/rofi/applets/network.sh:}﬉%{A}
+label-disconnected =  %{A1:~/.config/rofi/applets/network.sh:}%{A}
 label-disconnected-foreground = ${colors.black}
 
 ; ETHERNET (Not formatted)
