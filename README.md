@@ -1,5 +1,0 @@
-![](./Screenshots/home.png)
-![](./Screenshots/terminals.png)
-![](./Screenshots/rofi.png)
-![](./Screenshots/power.png)
-![](./Screenshots/nvim.png)
