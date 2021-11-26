@@ -8,8 +8,8 @@
  */
 
 configuration {
-	font:							"FantasqueSansMono Nerd Font 12";
-    window-format: 					"{w} {t}";
+	font:							"Google Sans Medium 12";
+    window-format: 					"{w} - {t}";
     show-icons:                     true;
 	icon-theme: 					"Papirus";
     drun-display-format:            "{name}";

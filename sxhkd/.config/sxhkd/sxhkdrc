@@ -32,7 +32,7 @@ super + Escape
 
 #rofi power menu
 super + shift + p
-    /home/sergio/.config/rofi/applets/network.sh
+    /home/sergio/.config/rofi/applets/powermenu.sh
 
 # rofi finder
 super + d

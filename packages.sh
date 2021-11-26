@@ -19,20 +19,10 @@ sudo pacman -S nvidia-dkms nvidia-utils nvidia-prime --needed
 # Misc
 sudo pacman -S nitrogen rofi cups hplip git wget lxappearance kitty firefox bat lsd fzf pcmanfm \
                reflector rsync texlive-core texlive-latexextra zathura zathura-pdf-poppler \
-               stow okular mpv obs-studio gnome-screenshot scrot gnome-calculator --needed
+               stow okular mpv obs-studio gnome-screenshot scrot gnome-calculator libappimage gnome-calendar --needed
 
 # Code packages 
-sudo pacman -S python-pip cuda cudnn python-tensorflow-cuda npm --needed
-
-# Enable services 
-sudo systemctl enable bluetooth
-sudo systemctl enable cups
-sudo systemctl enable sshd
-sudo systemctl enable NetworkManager
-sudo systemctl --user enable asus-notify.service
-systemctl enable reflector.timer
-
-sudo reflector -c Spain -a 5 --sort rate --save /etc/pacman.d/mirrorlist
+sudo pacman -S python-pip cuda cudnn python-tensorflow-cuda npm tk --needed
 
 #Install yay
 git clone https://aur.archlinux.org/yay.git
@@ -43,7 +33,11 @@ cd
 # Install yay packages
 yay -S polybar qt5ct qt5-styleplugins languagetool glxinfo zsh-autosuggestions zsh-autocomplete \
        zsh-theme-powerlevel10k picom-bhagwan-git xtitle spotify spicetify-cli nvim-packer-git \
-       downgrade thefuck betterlockscreen obsidian notion-app --needed
+       downgrade thefuck betterlockscreen obsidian notion-app blight --needed
+
+# Fonts
+yay -S ttf-ms-fonts ttf-unifont ttf-font-awesome ttf-google-sans nerd-fonts-jetbrains-mono \
+        adobe-source-code-pro-fonts --needed
 
 # Stow dotfiles
 git clone https://gitlab.com/sxrgiocs/dotfiles-zephyrus.git ~/.dotfiles
@@ -53,3 +47,12 @@ stow */
 # Misc commands
 betterlockscreen -u betterlockscreen -u /home/sergio/Pictures/Wallpaper/v3-290920-rocket-minimalist-desktop-wallpaper-4k.png
 
+# Enable services 
+sudo systemctl enable bluetooth
+sudo systemctl enable cups
+sudo systemctl enable sshd
+sudo systemctl enable NetworkManager
+sudo systemctl --user enable asus-notify.service
+systemctl enable reflector.timer
+
+sudo reflector -c Spain -a 5 --sort rate --save /etc/pacman.d/mirrorlist

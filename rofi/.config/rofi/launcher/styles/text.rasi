@@ -105,8 +105,8 @@ element normal.active {
 
 /* Current program */
 element selected.normal {
-    background-color: 				@gray;
-    text-color:       				@se;
+    background-color: 				@ac;
+    text-color:       				@fg;
 }
 
 element selected.urgent {
@@ -154,8 +154,8 @@ button {
 }
 
 button selected {
-    background-color:             	@gray;
-    text-color: 					@bg;
+    background-color:             	@ac;
+    text-color: 					@fg;
     border: 						0px;
     border-radius: 					4px;
     border-color: 					@fg;

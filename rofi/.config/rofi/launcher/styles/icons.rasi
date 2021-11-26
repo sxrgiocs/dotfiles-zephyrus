@@ -111,8 +111,8 @@ element-text {
 }
 
 element selected {
-    background-color:               @gray;
-    text-color:                     @bg;
+    background-color:               @ac;
+    text-color:                     @fg;
 	border:							1.1% 0% 1% 0%;
     border-radius:                  4px;
     border-color:                  	@border;

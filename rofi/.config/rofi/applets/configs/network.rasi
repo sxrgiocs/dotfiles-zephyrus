@@ -80,7 +80,7 @@ mainbox {
 
 element {
     background-color:               @bg;
-    text-color:                     @fg;
+    text-color:                     @gray;
     orientation:                    vertical;
     border-radius:                  4px;
 }
@@ -98,30 +98,32 @@ element-text {
 /* disconnected */
 element normal.urgent,
 element alternate.urgent {
-    background-color:               @ac;
-    text-color:                     @bg;
+    background-color:               @bg;
+    text-color:                     @se;
     border-radius:                  4px;
 }
 
 element normal.active,
 element alternate.active {
-    background-color:               @ac;
+    background-color:               @bg;
     text-color:                     @green;
 }
 
 element selected {
-    background-color:               @gray;
-    text-color:                     @se;
+    background-color:               @ac;
+    text-color:                     @blue;
     border:                  		0px 0px 0px 0px;
     border-radius:                  4px;
 }
 
+/* disconnected network */
 element selected.urgent {
     background-color:               @blue;
     text-color:                     @bg;
 }
 
+/* connected */
 element selected.active {
     background-color:               @blue;
-    color:                          @bg;
+    color:                          @green;
 }
