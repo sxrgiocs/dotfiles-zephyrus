@@ -24,6 +24,9 @@ setopt autocd
 export _JAVA_AWT_WM_NONPARENTING=1
 export _JAVA_AWT_WM_NONREPARENTING=1
 
+# NPM path
+export PATH=~/.npm-global/bin:$PATH
+
 #HWA
 #export LIBVA_DRIVER_NAME=radeonsi
 

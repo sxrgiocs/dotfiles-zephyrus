@@ -37,7 +37,7 @@ gray = #c3c7e0
 
 transparent = #00
 
-background = #07071a
+background = #d90b0b18
 foreground = #383d63
 foreground-alt = #22253d
 back_clear = #14162b
@@ -56,12 +56,13 @@ dpi = 125
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-bottom=True
+;bottom=True
 
 ; Give transparent space around the bar
-width=2552
-offset-x = 4px
-offset-y = 4px
+;width=2552
+width=2560
+;offset-x = 4px
+;offset-y = 4px
 #offset-y = 0.7%
 
 ; Aesthetic adjustments
@@ -108,11 +109,13 @@ height = 22
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-bottom = True
+;bottom = True
 
-width= 1912px
-offset-x = 4px
-offset-y = 4px
+;width= 1912px
+;offset-x = 4px
+;offset-y = 4px
+
+width = 1920
 
 ; Aesthetic adjustments
 line-size = 1
@@ -189,7 +192,7 @@ label-occupied-padding = 1
 label-occupied-foreground = ${colors.gray}
 
 label-urgent = %{T5}%{T-}
-label-urgent-background = ${colors.red}
+label-urgent-foreground = ${colors.red}
 label-urgent-padding = 1
 
 label-empty = %{T5}%{T-}
