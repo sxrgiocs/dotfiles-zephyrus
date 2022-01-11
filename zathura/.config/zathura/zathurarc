@@ -1,4 +1,4 @@
-set default-bg "#07071a"
+set default-bg "#0b0b18"
 
 set recolor                     "true"
 set recolor-reverse-video       "true"
@@ -6,9 +6,9 @@ set recolor-keephue             "true"
 
 set recolor true
 set recolor-darkcolor "#ffffff" # this is white
-set recolor-lightcolor "#07071a" #this is dark blue
+set recolor-lightcolor "#0b0b18" #this is dark blue
 
-set statusbar-bg "#07071a"
+set statusbar-bg "#0b0b18"
 set statusbar-fg "#ffbe5c"
 
 set selection-clipboard clipboard
