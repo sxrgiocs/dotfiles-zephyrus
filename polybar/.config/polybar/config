@@ -81,7 +81,7 @@ font-3 = JetBrains Mono Nerd Font:style=bold:pixelsize=15;4
 font-4 = JetBrains Mono Nerd Font:style=bold:pixelsize=12;4
 
 ; Modules
-modules-left = empty-small launcher bspwm empty-small round-left spotify round-right empty-small xwindow
+modules-left = empty-small menu-apps bspwm empty-small round-left spotify round-right empty-small xwindow
 modules-center = 
 modules-right = round-left cpu empty-color memory round-right empty temperature empty pulseaudio empty battery empty round-left date round-right empty-small wlan eth empty-small
 
@@ -133,7 +133,7 @@ font-3 = JetBrains Mono Nerd Font:style=bold:pixelsize=15;4
 font-4 = JetBrains Mono Nerd Font:style=bold:pixelsize=12;3
 
 ; Modules
-modules-left = empty-small launcher bspwm empty-small round-left spotify round-right empty-small xwindow
+modules-left = empty-small menu-apps bspwm empty-small round-left spotify round-right empty-small xwindow
 modules-center = 
 modules-right = round-left cpu empty-color memory round-right empty temperature empty pulseaudio empty battery empty round-left date round-right empty-small wlan eth empty-small
 
@@ -380,34 +380,36 @@ scroll-down = playerctl --player=spotify previous
 type = custom/menu
 expand-right = true
 
-label-open = Menu
-label-close = X
-label-separator = |
-format-spacing = 1
+label-open = %{T5} |%{T-}
+label-close = %{T5} %{T}
+label-close-foreground = ${colors.red}
+;label-separator =
+;format-spacing =
 
-menu-0-0 = WLAN
-menu-0-0-exec = kitty -e nmtui
-menu-0-1 = Power
-menu-0-1-exec = menu-open-2
+menu-0-0 = %{T3}%{T-}
+menu-0-0-foreground = ${colors.foreground-alt}
 
-menu-1-0 = rofi
-menu-1-0-exec = rofi -show windowcd
-menu-1-1 = Spotify
-menu-1-1-exec = spotify &
+menu-0-1 = %{T5}   %{T}
+menu-0-1-exec = /home/sergio/.config/rofi/launcher/launcher.sh
+menu-0-1-background = ${colors.foreground-alt}
+menu-0-1-foreground = ${colors.purple}
 
-menu-2-0 = Reboot
-menu-2-0-exec = systemctl reboot
-menu-2-1 = Shutdown
-menu-2-1-exec = systemctl poweroff
+menu-0-2 = %{T5} %{T} 
+menu-0-2-background = ${colors.foreground-alt}
+menu-0-2-foreground = ${colors.cyan}
+menu-0-2-exec = /home/sergio/.config/rofi/applets/powermenu.sh
 
-[module/launcher]
-type = custom/text
+menu-0-3 = %{T3}%{T-}
+menu-0-3-foreground = ${colors.foreground-alt}
 
-content = %{T5} |%{T-}
-content-background = ${colors.background}
-content-foreground = ${colors.foreground}
-
-click-left = /home/sergio/.config/rofi/launcher/launcher.sh
-click-right = exec rofi -show combi
+;menu-1-0 = rofi
+;menu-1-0-exec = rofi -show windowcd
+;menu-1-1 = Spotify
+;menu-1-1-exec = spotify &
+;
+;menu-2-0 = Reboot
+;menu-2-0-exec = systemctl reboot
+;menu-2-1 = Shutdown
+;menu-2-1-exec = systemctl poweroff
 
 ; vim:ft=dosini
