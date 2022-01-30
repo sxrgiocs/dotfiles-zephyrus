@@ -17,8 +17,8 @@ Xft.dpi: 130
 
 ! DARK OCEAN COLOR SCHEME
 #define FOREGROUND #f8f8f2
-!#define BACKGROUND #0a0a17
-#define BACKGROUND #07071a
+#define BACKGROUND #0b0b18
+!#define BACKGROUND #07071a
 
 #define COLOR0  #22253d
 #define COLOR8  #383d63
