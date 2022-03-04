@@ -74,6 +74,7 @@ module-margin-right = 0
 ;separator = %{F#44475a}|%{F-}
 
 ; Fonts
+; Font awesome 6.0.0 breaks sizing. Keep 5.15
 font-0 = Jetbrains Mono:style=bold:pixelsize=9.5;4
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = Font Awesome 5 Free Solid:size=10;4

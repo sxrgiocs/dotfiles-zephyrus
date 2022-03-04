@@ -52,4 +52,7 @@ asusctl -c 60 &
 asusctl profile -P quiet &
 asusctl led-mode --sleep-enable false &
 
+# Other commands
+xinput set-prop 13 329 0.4 &
+
 exec bspwm

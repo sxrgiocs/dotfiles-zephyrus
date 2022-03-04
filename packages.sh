@@ -19,7 +19,8 @@ sudo pacman -S nvidia-dkms nvidia-utils nvidia-prime --needed
 # Misc
 sudo pacman -S nitrogen rofi cups hplip git wget lxappearance kitty firefox bat lsd fzf pcmanfm \
                reflector rsync texlive-core texlive-latexextra texlive-pictures zathura zathura-pdf-poppler \
-               stow okular mpv obs-studio gnome-screenshot scrot gnome-calculator libappimage gnome-calendar --needed
+               stow okular mpv obs-studio gnome-screenshot scrot gnome-calculator libappimage gnome-calendar \
+               qbittorrent calibre tmux --needed
 
 # Code packages 
 sudo pacman -S python-pip cuda cudnn python-tensorflow-cuda npm tk --needed
@@ -38,6 +39,9 @@ yay -S polybar qt5ct qt5-styleplugins languagetool glxinfo zsh-autosuggestions z
 # Fonts
 yay -S ttf-ms-fonts ttf-unifont ttf-font-awesome ttf-google-sans nerd-fonts-jetbrains-mono \
         adobe-source-code-pro-fonts otf-symbola --needed
+
+# Corporate
+yay -S autofirma-bin
 
 # Stow dotfiles
 git clone https://gitlab.com/sxrgiocs/dotfiles-zephyrus.git ~/.dotfiles
