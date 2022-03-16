@@ -39,7 +39,7 @@ window {
 listview {
     background-color:               @bg-alt;
     columns:                        8;
-    lines:                          1;
+    lines:                          2;
     spacing:                        0%;
     cycle:                          true;
     dynamic:                        true;

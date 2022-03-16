@@ -47,6 +47,9 @@ dunst &
 udiskie &
 sxhkd &
 
+# Frame rate
+xrandr -r 60
+
 # Zephyrus commands
 asusctl -c 60 &
 asusctl profile -P quiet &

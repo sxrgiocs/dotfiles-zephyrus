@@ -1,0 +1,162 @@
+/*
+ *
+ * Author  : Aditya Shakya
+ * Mail    : adi1090x@gmail.com
+ * Github  : @adi1090x
+ * Twitter : @adi1090x
+ *
+ */
+
+configuration {
+    font: 							"Google Sans Medium 12";
+    location: 						1;
+    fixed-num-lines: 				true;
+    show-icons: 					true;
+    sidebar-mode: 					true;
+    window-format: 					" -   {w}   -   {c}   -   {t} ";
+    click-to-exit: 					true;
+    display-window: 				"";
+    display-filebrowser:			"";
+    display-run: 					"";
+    display-ssh: 					"";
+    display-drun: 					"";
+    display-combi: 					"";
+}
+
+@import "themes/NightParrot.rasi"
+
+* {
+    background-color:             	@bg;
+}
+
+window {
+    /* up right down left */
+    padding: 						2% 1% 2% 1%;
+    width: 							25%;
+    height: 						60%;
+    x-offset:                       0.75%;
+    y-offset:                       35.4%;
+}
+
+prompt {
+    enabled:                        true;
+    spacing: 						0;
+    border: 						0;
+    text-color: 					@gray;
+    background-color:               @ac;
+    font: 							"Google Sans Medium 20";
+}
+
+entry {
+    spacing:    					0;
+    text-color: 					@gray;
+    background-color:               @ac;
+    horizontal-align:               0.04;
+    vertical-align:                 0.6;
+    placeholder:                    "Search...";
+    placeholder-color:              @bg;
+}
+
+inputbar {
+    text-color: 					@se;
+    background-color:               @ac;
+    padding:    					1%;
+    border-radius:                  4px;
+    children: 						[prompt, entry];
+}
+
+mainbox {
+    border: 						0px;
+    border-color: 					@ac;
+}
+
+listview {
+    columns:						1;
+    fixed-height: 					0;
+    spacing: 						0.5%;
+    padding: 						1% 0% 0% 0%;
+}
+
+element-text, element-icon {
+    background-color: #00000000;
+    text-color:       inherit;
+}
+
+element {
+    border: 						0px;
+    border-radius: 					4px;
+    padding: 						5px;
+}
+
+element normal.normal {
+    background-color: 				@bg;
+    text-color:       				@fg;
+}
+
+element normal.urgent {
+    background-color: 				@bg;
+    text-color:       				@red;
+}
+
+element normal.active {
+    background-color: 				@green;
+    text-color:       				@bg;
+}
+
+/* Current program */
+element selected.normal {
+    background-color: 				@ac;
+    text-color:       				@fg;
+}
+
+element selected.urgent {
+    background-color: 				@bg;
+    text-color:       				@red;
+}
+
+/* current window */
+element selected.active {
+    background-color: 				@gray;
+    text-color:       				@bg;
+}
+
+element alternate.normal {
+    background-color: 				@bg;
+    text-color:       				@fg;
+}
+
+element alternate.urgent {
+    background-color: 				@bg;
+    text-color:       				@fg;
+}
+
+element alternate.active {
+    background-color: 				@bg;
+    text-color:       				@fg;
+}
+
+sidebar {
+    border:       					0px;
+    border-color: 					@ac;
+    border-radius: 					0px;
+}
+
+button {
+    horizontal-align:               0.5;
+    vertical-align:                 0.5;
+    background-color:             	@ac;
+    margin: 						5px;
+    text-color: 					@fg;
+    border: 						0px;
+    border-radius: 					4px;
+    border-color: 					@fg;
+    font: 							"Google Sans Medium 20";
+}
+
+button selected {
+    background-color:             	@ac;
+    text-color: 					@fg;
+    border: 						0px;
+    border-radius: 					4px;
+    border-color: 					@fg;
+}

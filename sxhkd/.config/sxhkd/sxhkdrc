@@ -42,7 +42,8 @@ shift + alt + Tab
     /home/sergio/.config/rofi/launcher/launcher_hidden.sh
 
 alt + Tab 
-    /home/sergio/.config/rofi/launcher/window_launcher.sh
+    skippy-xd-runner --activate --next
+#    /home/sergio/.config/rofi/launcher/window_launcher.sh
 
 ########################################################################
 #                       B S P W M  H O T K E Y S                       #
@@ -222,12 +223,14 @@ super + {z,x}
 super + shift + c
 	pcmanfm 
 
-#launch firefox
+#launch browser
 super + shift + b
     firefox
+#   chromium
 
 super + shift + m
-	firefox --private-window
+    firefox --private-window
+#    chromium --incognito
 
 #screenshot
 super + shift + s

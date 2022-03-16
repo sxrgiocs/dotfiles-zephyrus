@@ -381,7 +381,7 @@ scroll-down = playerctl --player=spotify previous
 type = custom/menu
 expand-right = true
 
-label-open = %{T5} |%{T-}
+label-open = %{T5} %{T-}
 label-close = %{T5} %{T}
 label-close-foreground = ${colors.red}
 ;label-separator =
@@ -400,7 +400,7 @@ menu-0-2-background = ${colors.foreground-alt}
 menu-0-2-foreground = ${colors.cyan}
 menu-0-2-exec = /home/sergio/.config/rofi/applets/powermenu.sh
 
-menu-0-3 = %{T3}%{T-}
+menu-0-3 = %{T3} %{T-}
 menu-0-3-foreground = ${colors.foreground-alt}
 
 ;menu-1-0 = rofi

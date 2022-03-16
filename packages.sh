@@ -60,3 +60,9 @@ sudo systemctl --user enable asus-notify.service
 systemctl enable reflector.timer
 
 sudo reflector -c Spain -a 5 --sort rate --save /etc/pacman.d/mirrorlist
+
+# Link files
+ln -s /home/sergio/.p10k.zsh
+ln -s /home/sergio/.zshrc
+ln -s /home/sergio/.tmux.conf
+
