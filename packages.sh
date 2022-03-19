@@ -36,6 +36,10 @@ yay -S polybar qt5ct qt5-styleplugins languagetool glxinfo zsh-autosuggestions z
        zsh-theme-powerlevel10k picom-bhagwan-git xtitle spotify spicetify-cli nvim-packer-git \
        downgrade thefuck betterlockscreen obsidian notion-app blight --needed
 
+# Touchpad gestures
+yay -S touchegg
+# Enable the service: systemctl enable touchegg.service
+
 # Fonts
 yay -S ttf-ms-fonts ttf-unifont ttf-font-awesome ttf-google-sans nerd-fonts-jetbrains-mono \
         adobe-source-code-pro-fonts otf-symbola --needed
@@ -49,7 +53,8 @@ cd .dotfiles
 stow */
 
 # Misc commands
-betterlockscreen -u betterlockscreen -u /home/sergio/Pictures/Wallpaper/v3-290920-rocket-minimalist-desktop-wallpaper-4k.png
+betterlockscreen -u /home/sergio/Pictures/Wallpaper/v3-290920-rocket-minimalist-desktop-wallpaper-4k.png
+# Enable the service: systemctl enable betterlockscreen@$USER
 
 # Enable services 
 sudo systemctl enable bluetooth

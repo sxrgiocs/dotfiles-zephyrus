@@ -122,8 +122,8 @@ alias disk='df -h | grep Filesystem & df -h | grep /dev/nvme0n1'
 alias fuckspace='for f in *\ *; do mv "$f" "${f// /_}"; done'
 
 # StartX DPI
-alias docked='startx /home/sergio/.xinitrc_docked'
-alias laptop='startx /home/sergio/.xinitrc_laptop'
+alias xd='startx /home/sergio/.xinitrc_docked'
+alias xl='startx /home/sergio/.xinitrc_laptop'
 
 # Get key for remapping
 alias keys='xev | awk -F'"'"'[ )]+'"'"' '"'"'/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'"'"''
@@ -188,6 +188,7 @@ alias jn='jupyter notebook'
 
 #GRUB
 alias winboot='sudo grub-reboot '"'"'$(grep -i windows /boot/grub/grub.cfg|cut -d"'\''\'\'''\''" -f2)'"'"' && sudo reboot'
+
 # Ranger
 alias media='ranger /run/media'
 alias conf='ranger /home/sergio/.config'

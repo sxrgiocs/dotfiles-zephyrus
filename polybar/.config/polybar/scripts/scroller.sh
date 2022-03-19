@@ -163,4 +163,3 @@ if [ $ICONS = "1" ]; then
 fi
 
 eval $RUNCOMMAND
-
