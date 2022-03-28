@@ -74,17 +74,16 @@ module-margin-right = 0
 ;separator = %{F#44475a}|%{F-}
 
 ; Fonts
-; Font awesome 6.0.0 breaks sizing. Keep 5.15
 font-0 = Jetbrains Mono:style=bold:pixelsize=9.5;4
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = Font Awesome 5 Free Solid:size=10;4
+font-2 = Font Awesome 6 Free Solid:size=10;4
 font-3 = JetBrains Mono Nerd Font:style=bold:pixelsize=15;4
 font-4 = JetBrains Mono Nerd Font:style=bold:pixelsize=12;4
 
 ; Modules
 modules-left = empty-small menu-apps bspwm empty-small round-left spotify round-right empty-small xwindow
 modules-center = 
-modules-right = round-left cpu empty-color memory round-right empty temperature empty pulseaudio empty battery empty round-left date round-right empty-small wlan eth empty-small
+modules-right = round-left cpu empty-color memory round-right empty temperature empty pulseaudio empty battery empty rlc time rrc date round-right empty-small wlan eth empty-small
 
 ; Tray
 tray-position = right
@@ -129,14 +128,14 @@ module-margin-right = 0
 ; Fonts
 font-0 = JetBrains Mono:style=bold:pixelsize=9.5;3
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = Font Awesome 5 Free Solid:size=10;2
+font-2 = Font Awesome 6 Free Solid:size=10;3
 font-3 = JetBrains Mono Nerd Font:style=bold:pixelsize=15;4
 font-4 = JetBrains Mono Nerd Font:style=bold:pixelsize=12;3
 
 ; Modules
 modules-left = empty-small menu-apps bspwm empty-small round-left spotify round-right empty-small xwindow
 modules-center = 
-modules-right = round-left cpu empty-color memory round-right empty temperature empty pulseaudio empty battery empty round-left date round-right empty-small wlan eth empty-small
+modules-right = round-left cpu empty-color memory empty-color round-right empty temperature empty pulseaudio empty battery empty rlc time rrc date round-right empty-small wlan eth empty-small
 
 ; Tray
 tray-position = right
@@ -161,10 +160,21 @@ type = custom/text
 content = %{T3}%{T-}
 content-foreground = ${colors.foreground-alt}
 
+[module/rlc]
+type = custom/text
+content = %{T3}%{T-}
+content-foreground = ${colors.foreground}
+
 [module/round-right]
 type = custom/text
-content = %{T3}%{T-}
+content = %{T4}%{T-}
 content-foreground = ${colors.foreground-alt}
+
+[module/rrc]
+type = custom/text
+content = %{T4}%{T-}
+content-foreground = ${colors.foreground}
+content-background = ${colors.foreground-alt}
 
 [module/empty]
 type = custom/text
@@ -256,7 +266,7 @@ format-prefix = " "
 format-prefix-foreground = ${colors.purple}
 format-prefix-background = ${colors.foreground-alt}
 
-label = %percentage_used%%
+label = "%used%"
 format-foreground = ${colors.white}
 format-background = ${colors.foreground-alt}
 
@@ -287,19 +297,28 @@ label-connected-foreground = ${colors.purple}
 format-disconnected = 
 
 ; DATE AND TIME
+[module/time]
+type = internal/date
+interval = 5
+
+format-prefix = " "
+format-prefix-foreground = ${colors.gray}
+format-prefix-background = ${colors.foreground}
+
+time = %H:%M
+
+label = %time%
+label-foreground = ${colors.white}
+label-background = ${colors.foreground}
+
 [module/date]
 type = internal/date
 interval = 5
 
-date = "%A %d, %B %Y"
+;date = " %A %d, %B %Y"
+date = " %a %b %d"
 
-format-prefix = " "
-format-prefix-foreground = ${colors.gray}
-format-prefix-background = ${colors.foreground-alt}
-
-time = %H:%M
-
-label = %time% %date%
+label = %date%
 label-foreground = ${colors.white}
 label-background = ${colors.foreground-alt}
 
@@ -400,7 +419,7 @@ menu-0-2-background = ${colors.foreground-alt}
 menu-0-2-foreground = ${colors.cyan}
 menu-0-2-exec = /home/sergio/.config/rofi/applets/powermenu.sh
 
-menu-0-3 = %{T3} %{T-}
+menu-0-3 = %{T4} %{T-}
 menu-0-3-foreground = ${colors.foreground-alt}
 
 ;menu-1-0 = rofi
@@ -413,4 +432,37 @@ menu-0-3-foreground = ${colors.foreground-alt}
 ;menu-2-1 = Shutdown
 ;menu-2-1-exec = systemctl poweroff
 
+[module/fsroot]
+type = internal/fs
+interval = 25
+
+mount-0 = /
+;mount-2 = /invalid/mountpoint
+
+format-mounted-prefix =" " 
+label-mounted = %free%
+
+format-mounted = <label-mounted>
+
+format-mounted-prefix-foreground = ${colors.cyan}
+format-mounted-foreground = ${colors.white}
+format-mounted-background = ${colors.foreground-alt}
+
+[module/fshome]
+type = internal/fs
+interval = 25
+
+mount-0 = /home
+;mount-2 = /invalid/mountpoint
+
+format-mounted-prefix = " "
+label-mounted = %free%
+
+format-mounted = <label-mounted>
+
+format-mounted-prefix-foreground = ${colors.cyan}
+format-mounted-foreground = ${colors.white}
+format-mounted-background = ${colors.foreground-alt}
+
 ; vim:ft=dosini
+

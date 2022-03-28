@@ -24,7 +24,7 @@ confirm_exit() {
 	rofi -dmenu\
 		-i\
 		-no-fixed-num-lines\
-		-p "Are You Sure? : "\
+		-p "Are You Sure? "\
 		-theme $HOME/.config/rofi/applets/configs/confirm.rasi
 }
 

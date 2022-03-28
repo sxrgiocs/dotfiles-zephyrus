@@ -23,7 +23,9 @@ sudo pacman -S nitrogen rofi cups hplip git wget lxappearance kitty firefox bat 
                qbittorrent calibre tmux --needed
 
 # Code packages 
-sudo pacman -S python-pip cuda cudnn python-tensorflow-cuda npm tk --needed
+sudo pacman -S python-pip cuda cudnn python-tensorflow-cuda npm tk \
+               python-numpy python-matplotlib python-scikit-learn python-scipy \
+               python-virtualenv python-virtualenvwrapper jupyterlab --needed
 
 #Install yay
 git clone https://aur.archlinux.org/yay.git

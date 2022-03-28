@@ -84,6 +84,10 @@ preexec() { echo -ne '\e[5 q' ;}
 
 bindkey "^?" backward-delete-char # use backspace in insert mode
 
+# Virtualenvwrapper
+#export WORKON_HOME=~/.virtualenvs
+#source /usr/bin/virtualenvwrapper_lazy.sh
+
 ########################################################################
 #                        K E Y  B I N D I N G S                        #
 ########################################################################
@@ -254,7 +258,7 @@ ex ()
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /home/sergio/Programs/zsh-plugins/zsh-window-title.zsh
+source /home/sergio/Apps/zsh-plugins/zsh-window-title.zsh
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

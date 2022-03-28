@@ -39,7 +39,7 @@ window {
 listview {
     background-color:               @bg-alt;
     columns:                        8;
-    lines:                          2;
+    lines:                          1;
     spacing:                        0%;
     cycle:                          true;
     dynamic:                        true;
@@ -68,7 +68,7 @@ element-icon {
     text-color:       				inherit;
     horizontal-align:               0.5;
     vertical-align:                 0.5;
-    size:                           128px;
+    size:                           80px;
     border:                         0px;
 }
 
@@ -78,7 +78,12 @@ element-text {
     expand:                         true;
     horizontal-align:               0.5;
     vertical-align:                 0.5;
-    margin:                         0.5% 0.5% -0.5% 0.5%;
+    margin:                         1% 1% -1% 1%;
+}
+
+element normal.active {
+    text-color:     				@green;
+    border-radius:                  4px;
 }
 
 element selected {

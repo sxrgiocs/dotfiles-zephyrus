@@ -9,8 +9,10 @@ style="winicons"
 
 dir="$HOME/.config/rofi/launcher/styles"
 
-rofi -no-lazy-grab -show window -window-thumbnail -show-icons\
--modi run,drun,window,ssh,filebrowser \
+#-window-thumbnail
+
+rofi -no-lazy-grab -show window -show-icons\
+-modi window \
 -theme $dir/"$style" \
 -kb-accept-entry '!Alt-Tab' -kb-row-down Alt-Tab \
 

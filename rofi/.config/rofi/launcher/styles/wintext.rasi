@@ -34,8 +34,9 @@ window {
     padding: 						2% 1% 2% 1%;
     width: 							25%;
     height: 						60%;
-    x-offset:                       0.75%;
-    y-offset:                       35.4%;
+    location:                       center;
+    x-offset:                       0;
+    y-offset:                       0;
 }
 
 prompt {
@@ -99,8 +100,8 @@ element normal.urgent {
 }
 
 element normal.active {
-    background-color: 				@green;
-    text-color:       				@bg;
+    /*background-color: 				;*/
+    text-color:       				@green;
 }
 
 /* Current program */

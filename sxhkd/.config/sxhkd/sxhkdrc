@@ -42,8 +42,8 @@ shift + alt + Tab
     /home/sergio/.config/rofi/launcher/launcher_hidden.sh
 
 alt + Tab 
-    skippy-xd-runner --activate --next
-#    /home/sergio/.config/rofi/launcher/window_launcher.sh
+#    skippy-xd-runner --activate --next
+    /home/sergio/.config/rofi/launcher/window_launcher.sh
 
 ########################################################################
 #                       B S P W M  H O T K E Y S                       #
@@ -100,7 +100,6 @@ super + Tab
 # focus the next/previous desktop in the current monitor
 #super + ctrl + {Left, Right}
 #	bspc desktop -f {prev,next}.occupied.local
-    bspc node -f
 
 super + ctrl + {j,k}
 	bspc desktop -f {prev,next}.occupied.local
@@ -121,9 +120,6 @@ super + {_,shift + }{1-9,0}
 
 super + {_,alt + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}' --follow
-
-super + alt + 1
-    bspc {desktop -f,node -d} '^11'
 
 # focus or send to the given desktop
 super + {_,shift + }{Left, Right}
