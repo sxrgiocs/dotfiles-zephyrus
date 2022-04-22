@@ -50,7 +50,7 @@ picom --experimental-backends &
 ########################################################################
 
 bspc config border_width        0 
-bspc config window_gap          5
+bspc config window_gap          4
 
 bspc config normal_border_color "#0a0a17"
 bspc config active_border_color "#0a0a17"

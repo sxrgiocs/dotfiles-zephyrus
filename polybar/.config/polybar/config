@@ -83,7 +83,7 @@ font-4 = JetBrains Mono Nerd Font:style=bold:pixelsize=12;4
 ; Modules
 modules-left = empty-small menu-apps bspwm empty-small round-left spotify round-right empty-small xwindow
 modules-center = 
-modules-right = round-left cpu empty-color memory round-right empty temperature empty pulseaudio empty battery empty rlc time rrc date round-right empty-small wlan eth empty-small
+modules-right = round-left cpu empty-color memory empty-color fsroot  round-right empty temperature empty pulseaudio empty battery empty rlc time rrc date round-right empty-small wlan eth empty-small
 
 ; Tray
 tray-position = right
@@ -135,7 +135,7 @@ font-4 = JetBrains Mono Nerd Font:style=bold:pixelsize=12;3
 ; Modules
 modules-left = empty-small menu-apps bspwm empty-small round-left spotify round-right empty-small xwindow
 modules-center = 
-modules-right = round-left cpu empty-color memory empty-color round-right empty temperature empty pulseaudio empty battery empty rlc time rrc date round-right empty-small wlan eth empty-small
+modules-right = round-left cpu empty-color memory empty-color fsroot  round-right empty temperature empty pulseaudio empty battery empty rlc time rrc date round-right empty-small wlan eth empty-small
 
 ; Tray
 tray-position = right
@@ -266,7 +266,7 @@ format-prefix = " "
 format-prefix-foreground = ${colors.purple}
 format-prefix-background = ${colors.foreground-alt}
 
-label = "%used%"
+label = "%used% "
 format-foreground = ${colors.white}
 format-background = ${colors.foreground-alt}
 
