@@ -1,0 +1,31 @@
+[Added Associations]
+application/octet-stream=firefox.desktop;
+x-scheme-handler/http=firefox.desktop;
+x-scheme-handler/https=firefox.desktop;
+text/html=firefox.desktop;
+text/css=nvim.desktop;
+image/png=viewnior.desktop;
+application/pdf=okular.desktop;
+text/plain=nvim.desktop;
+text/x-mrml=3dslicer.desktop;
+application/x-chrome-extension=chromium.desktop;
+video/mp4=firefox.desktop;
+application/dicom=3dslicer.desktop;
+inode/directory=pcmanfm.desktop
+
+[Default Applications]
+x-scheme-handler/notion=notion-app.desktop
+x-scheme-handler/http=firefox.desktop
+x-scheme-handler/https=firefox.desktop
+x-scheme-handler/chrome=firefox.desktop
+text/html=firefox.desktop
+application/x-extension-htm=firefox.desktop
+application/x-extension-html=firefox.desktop
+application/x-extension-shtml=firefox.desktop
+application/xhtml+xml=firefox.desktop
+application/x-extension-xhtml=firefox.desktop
+application/x-extension-xht=firefox.desktop
+x-scheme-handler/msteams=teams-for-linux.desktop
+application/lrf=calibre-lrfviewer.desktop
+x-scheme-handler/about=chromium.desktop
+x-scheme-handler/unknown=chromium.desktop

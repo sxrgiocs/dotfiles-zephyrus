@@ -216,7 +216,7 @@ super + {z,x}
 ########################################################################
 
 #launch pcmanfm
-super + shift + c
+super + shift + f
 	pcmanfm 
 
 #launch browser
@@ -245,7 +245,7 @@ super + shift + r
 super + shift + v 
     pavucontrol
     
-super + alt + c 
+super + shift + c 
     gnome-calculator
 
 

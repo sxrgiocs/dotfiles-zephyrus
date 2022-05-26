@@ -73,11 +73,11 @@ bspc rule -a Screenkey manage=off
 bspc rule -a Zathura state=tiled
 bspc rule -a Pavucontrol state=floating follow=on center=true
 bspc rule -a Pcmanfm state=floating center=true
-bspc rule -a Gnome-calculator state=floating follow=on
 bspc rule -a Blueman-manager state=floating follow=on center=true
 bspc rule -a MEGAsync state=floating follow=on rectangle=402x569 center=true
 bspc rule -a Nm-connection-editor state=floating follow=on center=true
 bspc rule -a Gnome-screenshot state=floating follow=on center=true
+bspc rule -a gnome-calculator state=floating follow=on center=true
 
 #bspc config pointer_modifier mod4 # mod4 = super key
 bspc config pointer_action1 move # super + left click

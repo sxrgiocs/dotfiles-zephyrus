@@ -24,6 +24,9 @@ setopt autocd
 export _JAVA_AWT_WM_NONPARENTING=1
 export _JAVA_AWT_WM_NONREPARENTING=1
 
+export JAVA_HOME="/usr/lib/jvm/java-11-openjdk/"
+export PATH=$PATH:$JAVA_HOME/bin
+
 # NPM path
 export PATH=~/.npm-global/bin:$PATH
 
@@ -39,7 +42,7 @@ export VISUAL=nvim
 export EDITOR=nvim
 
 # Make qt programs use gtk theme with qt5ct 
-export QT_QPA_PLATFORMTHEME=qt5ct
+export QT_QPA_PLATFORMTHEME=gtk2
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile

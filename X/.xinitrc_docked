@@ -40,7 +40,7 @@ sxhkd &
 
 # Zephyrus commands
 asusctl -c 60 &
-asusctl profile -P balanced &
+asusctl profile -P performance &
 asusctl led-mode --sleep-enable false &
 
 exec bspwm
